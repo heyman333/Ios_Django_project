@@ -7,4 +7,4 @@ class TestSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Test
-        fields = ('name', 'age')
+        fields = ('id', 'content')

@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Test(models.Model):
-    name = models.CharField(max_length=9)
-    age = models.IntegerField()
+    id = models.AutoField(primary_key=True)
+    content = models.CharField(max_length=100, default="Hello, World!")
 
     class Meta:
-        ordering = ('age',)
+        ordering = ('id',)
