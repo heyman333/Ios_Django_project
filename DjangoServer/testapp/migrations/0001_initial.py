@@ -13,12 +13,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Test',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
-                ('name', models.CharField(max_length=10)),
-                ('age', models.IntegerField(max_length=3)),
+                ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('content', models.CharField(max_length=100, default='Hello, World!')),
             ],
             options={
-                'ordering': ('age',),
+                'ordering': ('id',),
             },
         ),
     ]
