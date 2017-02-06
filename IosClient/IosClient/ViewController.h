@@ -10,9 +10,13 @@
 #import <AFNetworking.h>
 
 @interface ViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UILabel *greetingId;
+@property (nonatomic, strong) IBOutlet UILabel *greetingContent;
+@property (nonatomic, strong) IBOutlet UILabel *greetingId2;
+@property (nonatomic, strong) IBOutlet UILabel *greetingContent2;
 
+- (IBAction)fetchGreeting;
 
-- (void)test;
 
 @end
 
