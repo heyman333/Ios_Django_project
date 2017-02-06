@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from datetime import timezone
+
+from django.db import models, migrations
+from django.conf import settings
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('testapp', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.AddField(
+            model_name='test',
+            name='owner',
+            field=models.ForeignKey(default=0, related_name='testapp', to=settings.AUTH_USER_MODEL),
+            preserve_default=False,
+        ),
+    ]
