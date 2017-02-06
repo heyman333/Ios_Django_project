@@ -5,6 +5,7 @@ from testapp import views
 
 router = DefaultRouter()
 router.register(r'testapp', views.TestViewSet)
+router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
