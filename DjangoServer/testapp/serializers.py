@@ -16,7 +16,7 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Person
-        fields = ('url', 'owner', 'id', 'name', 'age', 'address')
+        fields = ('url', 'owner', 'id', 'name', 'age', 'gender', 'address')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     testapp_Test = serializers.HyperlinkedRelatedField(many=True, view_name='test-detail', read_only=True)

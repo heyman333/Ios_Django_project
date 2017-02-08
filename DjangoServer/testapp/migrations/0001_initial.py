@@ -18,8 +18,9 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=10)),
                 ('age', models.IntegerField()),
+                ('gender', models.CharField(max_length=10, choices=[('남자', '남자'), ('여자', '여자')])),
                 ('address', models.CharField(max_length=100)),
-                ('owner', models.ForeignKey(default='goo', related_name='testapp_Person', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(related_name='testapp_Person', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ('id',),
@@ -30,7 +31,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('content', models.CharField(max_length=100, default='Hello, World!')),
-                ('owner', models.ForeignKey(default='goo', related_name='testapp_Test', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(related_name='testapp_Test', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ('id',),
