@@ -13,11 +13,24 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Person',
+            fields=[
+                ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('name', models.CharField(max_length=10)),
+                ('age', models.IntegerField()),
+                ('address', models.CharField(max_length=100)),
+                ('owner', models.ForeignKey(default='goo', related_name='testapp_Person', to=settings.AUTH_USER_MODEL)),
+            ],
+            options={
+                'ordering': ('id',),
+            },
+        ),
+        migrations.CreateModel(
             name='Test',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('content', models.CharField(max_length=100, default='Hello, World!')),
-                ('owner', models.ForeignKey(related_name='testapp', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(default='goo', related_name='testapp_Test', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ('id',),
