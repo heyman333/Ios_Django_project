@@ -14,6 +14,7 @@
 		6FBFF6231E3F724100502924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF6211E3F724100502924 /* Main.storyboard */; };
 		6FBFF6251E3F724100502924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF6241E3F724100502924 /* Assets.xcassets */; };
 		6FBFF6281E3F724100502924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF6261E3F724100502924 /* LaunchScreen.storyboard */; };
+		6FED6A591E5055D4005A613E /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FED6A581E5055D4005A613E /* KakaoOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6FBFF6241E3F724100502924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FBFF6271E3F724100502924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FBFF6291E3F724100502924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FED6A581E5055D4005A613E /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		9A4B9F4B213CC4574483F1D6 /* libPods-IosClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52F73AAA6FF0FF2C6D9B5DA /* Pods-IosClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-IosClient/Pods-IosClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8E70FF44EA490FF56A7410 /* libPods-IosClient.a in Frameworks */,
+				6FED6A591E5055D4005A613E /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +101,7 @@
 		BDA32E59BD8F64AAA625EA8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6FED6A581E5055D4005A613E /* KakaoOpenSDK.framework */,
 				9A4B9F4B213CC4574483F1D6 /* libPods-IosClient.a */,
 			);
 			name = Frameworks;
@@ -346,6 +350,10 @@
 			baseConfigurationReference = 5454825B904CD05DB1D2B870 /* Pods-IosClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = IosClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hys.develop.IosClient;
@@ -358,6 +366,10 @@
 			baseConfigurationReference = B52F73AAA6FF0FF2C6D9B5DA /* Pods-IosClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = IosClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hys.develop.IosClient;
@@ -384,6 +396,7 @@
 				6FBFF62E1E3F724100502924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

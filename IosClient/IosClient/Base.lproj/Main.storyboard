@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,35 +22,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-M8-4LB">
-                                <rect key="frame" x="129" y="134" width="117" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="요 청">
-                                    <color key="titleColor" red="0.40974253762679125" green="0.8516298315634997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R51-GH-f8C">
+                                <rect key="frame" x="58" y="468" width="259" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zog-Q4-YSk"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="kakao_account_login_btn_large_narrow_ov"/>
+                                <connections>
+                                    <action selector="kakaoLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ji4-Xm-SJ0"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="넘어온 정보 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc0-RN-GAx">
-                                <rect key="frame" x="38" y="239" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkl-j0-S9w">
-                                <rect key="frame" x="133" y="235" width="203" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="R51-GH-f8C" secondAttribute="trailing" constant="42" id="IkT-zX-F6t"/>
+                            <constraint firstItem="R51-GH-f8C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tGg-0F-YQa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R51-GH-f8C" secondAttribute="bottom" constant="155" id="yW8-0C-nvD"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="sJF-nC-GOT">
+            <objects>
+                <viewController id="kTJ-Wq-L5O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n9i-ky-QyI"/>
+                        <viewControllerLayoutGuide type="bottom" id="9lz-pw-X9V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5i8-NE-dgE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A08-nR-ofW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="124"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="kakao_account_login_btn_large_narrow_ov" width="452" height="98"/>
+    </resources>
 </document>

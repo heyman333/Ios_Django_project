@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4AA42C1E4EF15200F5F7A5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F4AA42B1E4EF15200F5F7A5 /* Launch Screen.storyboard */; };
+		6F4AA42E1E4EF84C00F5F7A5 /* logo8.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4AA42D1E4EF84C00F5F7A5 /* logo8.png */; };
 		6F8061E71E4DA51C007349E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8061E61E4DA51C007349E8 /* main.m */; };
 		6F8061EA1E4DA51C007349E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8061E91E4DA51C007349E8 /* AppDelegate.m */; };
 		6F8061ED1E4DA51C007349E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8061EC1E4DA51C007349E8 /* ViewController.m */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		0049FA1BA1CCE602C1E5DD58 /* Pods-DataPostTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataPostTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataPostTest/Pods-DataPostTest.debug.xcconfig"; sourceTree = "<group>"; };
+		6F4AA42B1E4EF15200F5F7A5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		6F4AA42D1E4EF84C00F5F7A5 /* logo8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo8.png; sourceTree = "<group>"; };
 		6F8061E21E4DA51C007349E8 /* DataPostTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataPostTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8061E61E4DA51C007349E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F8061E81E4DA51C007349E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,9 +84,11 @@
 				6F8061EC1E4DA51C007349E8 /* ViewController.m */,
 				6F8061EE1E4DA51C007349E8 /* Main.storyboard */,
 				6F8061F11E4DA51C007349E8 /* Assets.xcassets */,
+				6F4AA42D1E4EF84C00F5F7A5 /* logo8.png */,
 				6F8061F31E4DA51C007349E8 /* LaunchScreen.storyboard */,
 				6F8061F61E4DA51C007349E8 /* Info.plist */,
 				6F8061E51E4DA51C007349E8 /* Supporting Files */,
+				6F4AA42B1E4EF15200F5F7A5 /* Launch Screen.storyboard */,
 			);
 			path = DataPostTest;
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 			files = (
 				6F8061F51E4DA51C007349E8 /* LaunchScreen.storyboard in Resources */,
 				6F8061F21E4DA51C007349E8 /* Assets.xcassets in Resources */,
+				6F4AA42C1E4EF15200F5F7A5 /* Launch Screen.storyboard in Resources */,
 				6F8061F01E4DA51C007349E8 /* Main.storyboard in Resources */,
+				6F4AA42E1E4EF84C00F5F7A5 /* logo8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
