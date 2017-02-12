@@ -8,42 +8,45 @@
 
 #import "ViewController.h"
 #import <AFNetworking.h>
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
 
-- (IBAction)fetchGreeting;
-{
-    NSURL *url = [NSURL URLWithString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/testapp/?format=json"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response,
-                                               NSData *data, NSError *connectionError)
-     {
-         if (data.length > 0 && connectionError == nil)
-         {
-             NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:NULL];
-             
-             self.greetingId.text = [[jsonArray[0] valueForKey:@"id"] stringValue];
-             self.greetingContent.text = [jsonArray[0] valueForKey:@"content"];
-             
-             self.greetingId2.text = [[jsonArray[1] valueForKey:@"id"] stringValue];
-             self.greetingContent2.text = [jsonArray[1] valueForKey:@"content"];
-         }
-         else{
-             NSLog(@"Error");
-         }
-     }];
+
+- (IBAction)kakaoLogIn:(UIButton *)sender{
+   [[KOSession sharedSession] close];
+    
+    KOSession *session = [KOSession sharedSession];
+    // do something for already registered user.
+    [session openWithCompletionHandler:^(NSError *error) {
+        session.presentingViewController = nil;
+        if (session.isOpen) {
+            // login success
+            NSLog(@"login succeeded.");
+            
+            [KOSessionTask meTaskWithCompletionHandler:^(KOUser* result, NSError *error) {
+                if (result) {
+                    // success
+                    NSLog(@"userId=%@", result.ID);
+                    NSLog(@"nickName=%@, %@", [result propertyForKey:@"nickname"], [result propertyForKey:@"profileImageURL"]);
+                    NSLog(@"result = %@", result);
+                } else {
+                    // failed
+                }
+            }];
+        } else {
+            // failed
+            NSLog(@"login failed.");
+        }
+    }];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchGreeting];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,5 +54,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 @end

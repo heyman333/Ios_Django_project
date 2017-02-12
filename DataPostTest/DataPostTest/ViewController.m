@@ -42,10 +42,11 @@
                                                 }];
     [dataTask resume];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(25, 25, self.view.frame.size.width-50, self.view.frame.size.height-50) style:UITableViewStylePlain];
     self.tableView = tableView;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView setBackgroundColor:[UIColor redColor]];
     
     [self.view addSubview:self.tableView];
     
@@ -112,8 +113,8 @@
 - (void)loginPost {
     
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
-    [bodyParameters setObject:@"han33333" forKey:@"username"];
-    [bodyParameters setObject:@"password" forKey:@"password"];
+    [bodyParameters setObject:@"HanYoungSoo" forKey:@"username"];
+    [bodyParameters setObject:@"1234" forKey:@"password"];
     
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/register/"
                                                                                              parameters:bodyParameters

@@ -14,8 +14,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *greetingContent;
 @property (nonatomic, strong) IBOutlet UILabel *greetingId2;
 @property (nonatomic, strong) IBOutlet UILabel *greetingContent2;
+@property (strong, nonatomic) IBOutlet UIButton *kakaoLogInBtn;
 
-- (IBAction)fetchGreeting;
+- (IBAction)kakaoLogIn:(UIButton *)sender;
 
 
 @end
