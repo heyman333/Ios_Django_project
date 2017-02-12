@@ -42,8 +42,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Django RestFramework
     'rest_framework',
-    # testapp
+    # testapp app
     'testapp',
+    # users app
+    'users',
 )
 
 MIDDLEWARE_CLASSES = (
