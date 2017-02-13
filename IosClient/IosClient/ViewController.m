@@ -15,7 +15,6 @@
 
 @implementation ViewController
 
-
 - (IBAction)kakaoLogIn:(UIButton *)sender{
    [[KOSession sharedSession] close];
     
@@ -54,8 +53,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 @end

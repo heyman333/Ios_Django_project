@@ -22,7 +22,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/testapp_Test/"];
+    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/testapp/Test/?format=json"];
     NSURL *url = [NSURL URLWithString:destinationURLString];
     
     //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -42,11 +42,11 @@
                                                 }];
     [dataTask resume];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(25, 25, self.view.frame.size.width-50, self.view.frame.size.height-50) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView = tableView;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView setBackgroundColor:[UIColor redColor]];
+//    [self.tableView setBackgroundColor:[UIColor redColor]];
     
     [self.view addSubview:self.tableView];
     
