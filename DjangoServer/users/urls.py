@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^register/', UserCreateAPIView.as_view(), name='register'),
     url(r'^login/', UserLoginAPIView.as_view(), name='login'),
-    # url(r'^auth/token/', obtain_jwt_token),
+    url(r'^auth/token/', obtain_jwt_token),
 ]
