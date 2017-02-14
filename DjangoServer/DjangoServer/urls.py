@@ -5,7 +5,7 @@ from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
 from testapp.views import TestViewSet, PersonViewSet
-from users.views import UserViewSet, ProfileViewSet, UserCreateAPIView
+from users.views import UserViewSet, ProfileViewSet
 
 router = DefaultRouter()
 router.register(r'users_List', UserViewSet)
@@ -20,6 +20,5 @@ urlpatterns = [
     url(r'^testapp/', include('testapp.urls')),
     # users url
     url(r'^users/', include('users.urls')),
-    url(r'^register/', UserCreateAPIView.as_view(), name='register'),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,7 +4,7 @@ from rest_framework import permissions
 
 from rest_framework import viewsets
 from rest_framework.generics import CreateAPIView
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView
@@ -12,6 +12,7 @@ from rest_framework.views import APIView
 from users.models import Profile
 from users.permission import IsOwnerOrReadOnly
 from users.serializers import UserSerializer, UserCreateSerializer, ProfileSerializer, UserLoginSerializer
+
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
@@ -21,6 +22,7 @@ class UserCreateAPIView(CreateAPIView):
     model = get_user_model()
     serializer_class = UserCreateSerializer
     permission_classes = [AllowAny]
+
 
 class UserLoginAPIView(APIView):
     permission_classes = [AllowAny]
@@ -41,6 +43,8 @@ class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     permission_classes = [AllowAny]
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+    #                       IsOwnerOrReadOnly,)
 
     def perform_create(self, serializer):
             serializer.save(owner=self.request.user)
