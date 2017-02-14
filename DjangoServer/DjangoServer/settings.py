@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'testapp',
     'users',
     'multiselectfield',
-    'rest_framework.authtoken',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +54,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware'
 )
 
 ROOT_URLCONF = 'DjangoServer.urls'
@@ -128,7 +126,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
 
     ),
