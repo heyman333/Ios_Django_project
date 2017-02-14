@@ -32,6 +32,7 @@ class PersonViewSet(viewsets.ModelViewSet):
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
+        'users': reverse('user-list', request=request, format=format),
         'Test': reverse('Test-list', request=request, format=format),
         'Person': reverse('Person-list', request=request, format=format)
     })
