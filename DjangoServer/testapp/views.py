@@ -1,7 +1,6 @@
 from rest_framework import permissions
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
-from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
@@ -14,7 +13,7 @@ class TestViewSet(viewsets.ModelViewSet):
 
     queryset = Test.objects.all()
     serializer_class = TestSerializer
-    permission_classes = [AllowAny]
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
     def perform_create(self, serializer):
             serializer.save(owner=self.request.user)
@@ -23,7 +22,7 @@ class PersonViewSet(viewsets.ModelViewSet):
 
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
-    permission_classes = [AllowAny]
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
     def perform_create(self, serializer):
             serializer.save(owner=self.request.user)

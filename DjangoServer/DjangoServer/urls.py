@@ -16,9 +16,7 @@ router.register(r'testapp_Person', PersonViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
-    # testapp url
     url(r'^testapp/', include('testapp.urls')),
-    # users url
     url(r'^users/', include('users.urls')),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
