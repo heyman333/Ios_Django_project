@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,46 +22,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R51-GH-f8C">
-                                <rect key="frame" x="58" y="468" width="259" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaA-dh-shW">
+                                <rect key="frame" x="50" y="496" width="274" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="zog-Q4-YSk"/>
+                                    <constraint firstAttribute="height" constant="48" id="bMO-DK-WoF"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="kakao_account_login_btn_large_narrow_ov"/>
                                 <connections>
-                                    <action selector="kakaoLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ji4-Xm-SJ0"/>
+                                    <action selector="kakaoLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CRe-4k-xlM"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.81960784313725488" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="R51-GH-f8C" secondAttribute="trailing" constant="42" id="IkT-zX-F6t"/>
-                            <constraint firstItem="R51-GH-f8C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tGg-0F-YQa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R51-GH-f8C" secondAttribute="bottom" constant="155" id="yW8-0C-nvD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uaA-dh-shW" secondAttribute="trailing" constant="35" id="1CA-lW-Vz4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uaA-dh-shW" secondAttribute="bottom" constant="123" id="RQQ-ec-mXP"/>
+                            <constraint firstItem="uaA-dh-shW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gAe-4e-1fj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="cx2-5b-Reu" kind="show" identifier="MainViewSegue" id="cg3-bt-ejQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-3350" y="-823"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sJF-nC-GOT">
+        <!--Main View Controller-->
+        <scene sceneID="yBl-TA-Fbt">
             <objects>
-                <viewController id="kTJ-Wq-L5O" sceneMemberID="viewController">
+                <viewController id="cx2-5b-Reu" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n9i-ky-QyI"/>
-                        <viewControllerLayoutGuide type="bottom" id="9lz-pw-X9V"/>
+                        <viewControllerLayoutGuide type="top" id="Bke-B8-l3I"/>
+                        <viewControllerLayoutGuide type="bottom" id="JSF-QZ-0fD"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5i8-NE-dgE">
+                    <view key="view" contentMode="scaleToFill" id="p4B-fg-vWs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ww5-Zx-mLj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LW8-wD-iMe">
+                                        <rect key="frame" x="8" y="25" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56C-uI-pPA">
+                                        <rect key="frame" x="116" y="25" width="186" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91403216192099435" green="0.97650135095528512" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gCy-0W-vop">
+                                <rect key="frame" x="0.0" y="189" width="375" height="478"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="63" id="mb5-AM-okC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mb5-AM-okC" id="dvL-GX-MlG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="56C-uI-pPA" id="NgW-3X-ZjJ"/>
+                        <outlet property="profileImg" destination="LW8-wD-iMe" id="a4k-1X-RPl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A08-nR-ofW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ra-iI-Nbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="124"/>
+            <point key="canvasLocation" x="-2596" y="-824.43778110944538"/>
         </scene>
     </scenes>
     <resources>

@@ -10,11 +10,16 @@
 		4B8E70FF44EA490FF56A7410 /* libPods-IosClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4B9F4B213CC4574483F1D6 /* libPods-IosClient.a */; };
 		6FBFF61A1E3F724100502924 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFF6191E3F724100502924 /* main.m */; };
 		6FBFF61D1E3F724100502924 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFF61C1E3F724100502924 /* AppDelegate.m */; };
-		6FBFF6201E3F724100502924 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFF61F1E3F724100502924 /* ViewController.m */; };
+		6FBFF6201E3F724100502924 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFF61F1E3F724100502924 /* LogInViewController.m */; };
 		6FBFF6231E3F724100502924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF6211E3F724100502924 /* Main.storyboard */; };
 		6FBFF6251E3F724100502924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF6241E3F724100502924 /* Assets.xcassets */; };
 		6FBFF6281E3F724100502924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF6261E3F724100502924 /* LaunchScreen.storyboard */; };
 		6FED6A591E5055D4005A613E /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FED6A581E5055D4005A613E /* KakaoOpenSDK.framework */; };
+		6FF8D8441E52E3DA00F0ECF0 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF8D8431E52E3DA00F0ECF0 /* triangle.png */; };
+		6FF8D8461E52E3E500F0ECF0 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF8D8451E52E3E500F0ECF0 /* square.png */; };
+		6FF8D8481E52E3EB00F0ECF0 /* prism.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF8D8471E52E3EB00F0ECF0 /* prism.png */; };
+		6FF8D84B1E52E56700F0ECF0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF8D84A1E52E56700F0ECF0 /* MainViewController.m */; };
+		6FF8D84E1E52E66D00F0ECF0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF8D84D1E52E66D00F0ECF0 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +28,20 @@
 		6FBFF6191E3F724100502924 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6FBFF61B1E3F724100502924 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6FBFF61C1E3F724100502924 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6FBFF61E1E3F724100502924 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6FBFF61F1E3F724100502924 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6FBFF61E1E3F724100502924 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		6FBFF61F1E3F724100502924 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		6FBFF6221E3F724100502924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FBFF6241E3F724100502924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FBFF6271E3F724100502924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FBFF6291E3F724100502924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FED6A581E5055D4005A613E /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		6FF8D8431E52E3DA00F0ECF0 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
+		6FF8D8451E52E3E500F0ECF0 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
+		6FF8D8471E52E3EB00F0ECF0 /* prism.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prism.png; sourceTree = "<group>"; };
+		6FF8D8491E52E56700F0ECF0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6FF8D84A1E52E56700F0ECF0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6FF8D84C1E52E66D00F0ECF0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6FF8D84D1E52E66D00F0ECF0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9A4B9F4B213CC4574483F1D6 /* libPods-IosClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52F73AAA6FF0FF2C6D9B5DA /* Pods-IosClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-IosClient/Pods-IosClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,10 +68,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6F15013A1E53F170001BEB77 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6FBFF61E1E3F724100502924 /* LogInViewController.h */,
+				6FBFF61F1E3F724100502924 /* LogInViewController.m */,
+				6FF8D8491E52E56700F0ECF0 /* MainViewController.h */,
+				6FF8D84A1E52E56700F0ECF0 /* MainViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		6F15013B1E53F262001BEB77 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				6FBFF6211E3F724100502924 /* Main.storyboard */,
+				6FBFF6261E3F724100502924 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
 		6FBFF60C1E3F724100502924 = {
 			isa = PBXGroup;
 			children = (
-				6FBFF6171E3F724100502924 /* IosClient */,
+				6FF8D8411E52E38F00F0ECF0 /* New Group */,
 				6FBFF6161E3F724100502924 /* Products */,
 				3C16C3CD468E79B1C6A45057 /* Pods */,
 				BDA32E59BD8F64AAA625EA8B /* Frameworks */,
@@ -77,13 +109,13 @@
 		6FBFF6171E3F724100502924 /* IosClient */ = {
 			isa = PBXGroup;
 			children = (
+				6F15013B1E53F262001BEB77 /* StoryBoard */,
+				6F15013A1E53F170001BEB77 /* ViewController */,
+				6FF8D84F1E52E67400F0ECF0 /* ModelClass */,
 				6FBFF61B1E3F724100502924 /* AppDelegate.h */,
 				6FBFF61C1E3F724100502924 /* AppDelegate.m */,
-				6FBFF61E1E3F724100502924 /* ViewController.h */,
-				6FBFF61F1E3F724100502924 /* ViewController.m */,
-				6FBFF6211E3F724100502924 /* Main.storyboard */,
+				6FF8D8421E52E3AB00F0ECF0 /* launchScreen Img */,
 				6FBFF6241E3F724100502924 /* Assets.xcassets */,
-				6FBFF6261E3F724100502924 /* LaunchScreen.storyboard */,
 				6FBFF6291E3F724100502924 /* Info.plist */,
 				6FBFF6181E3F724100502924 /* Supporting Files */,
 			);
@@ -96,6 +128,33 @@
 				6FBFF6191E3F724100502924 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6FF8D8411E52E38F00F0ECF0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				6FBFF6171E3F724100502924 /* IosClient */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		6FF8D8421E52E3AB00F0ECF0 /* launchScreen Img */ = {
+			isa = PBXGroup;
+			children = (
+				6FF8D8471E52E3EB00F0ECF0 /* prism.png */,
+				6FF8D8451E52E3E500F0ECF0 /* square.png */,
+				6FF8D8431E52E3DA00F0ECF0 /* triangle.png */,
+			);
+			name = "launchScreen Img";
+			sourceTree = "<group>";
+		};
+		6FF8D84F1E52E67400F0ECF0 /* ModelClass */ = {
+			isa = PBXGroup;
+			children = (
+				6FF8D84C1E52E66D00F0ECF0 /* User.h */,
+				6FF8D84D1E52E66D00F0ECF0 /* User.m */,
+			);
+			name = ModelClass;
 			sourceTree = "<group>";
 		};
 		BDA32E59BD8F64AAA625EA8B /* Frameworks */ = {
@@ -169,8 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FBFF6281E3F724100502924 /* LaunchScreen.storyboard in Resources */,
+				6FF8D8441E52E3DA00F0ECF0 /* triangle.png in Resources */,
+				6FF8D8461E52E3E500F0ECF0 /* square.png in Resources */,
 				6FBFF6251E3F724100502924 /* Assets.xcassets in Resources */,
 				6FBFF6231E3F724100502924 /* Main.storyboard in Resources */,
+				6FF8D8481E52E3EB00F0ECF0 /* prism.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FBFF6201E3F724100502924 /* ViewController.m in Sources */,
+				6FF8D84E1E52E66D00F0ECF0 /* User.m in Sources */,
+				6FBFF6201E3F724100502924 /* LogInViewController.m in Sources */,
 				6FBFF61D1E3F724100502924 /* AppDelegate.m in Sources */,
 				6FBFF61A1E3F724100502924 /* main.m in Sources */,
+				6FF8D84B1E52E56700F0ECF0 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

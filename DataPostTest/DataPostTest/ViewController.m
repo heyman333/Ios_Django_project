@@ -5,19 +5,18 @@
 //  Created by HanYoungsoo on 2017. 2. 10..
 //  Copyright © 2017년 YoungsooHan. All rights reserved.
 //
-
 #import "ViewController.h"
 #import <AFNetworking.h>
 @interface ViewController ()
 <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinningActivutyIndicator;
 @property NSArray *array;
 @end
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.array = @[];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -37,15 +36,22 @@
                                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                                     
                                                     self.array = [responseObject objectForKey:@"results"];
-                                                    [self.tableView reloadData];
+                                                    
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        [self.tableView reloadData];
+                                                    });
+                                                    
+//                                                    self performSelectorOnMainThread:<#(nonnull SEL)#> withObject:<#(nullable id)#> waitUntilDone:<#(BOOL)#>
                                                     
                                                 }];
     [dataTask resume];
+    
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView = tableView;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    [self.tableView setBackgroundColor:[UIColor redColor]];
     
     [self.view addSubview:self.tableView];
