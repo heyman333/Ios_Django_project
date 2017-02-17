@@ -19,32 +19,19 @@
 
 //Kakao LogIn 버튼 기능
 - (IBAction)kakaoLogin:(UIButton *)sender {
-    [[KOSession sharedSession] close];
-
     KOSession *session = [KOSession sharedSession];
-    // do something for already registered user.
+    
     [session openWithCompletionHandler:^(NSError *error) {
-        session.presentingViewController = nil;
-        if (session.isOpen) {
-            // login success
-            NSLog(@"login succeeded.");
-            
-            [KOSessionTask meTaskWithCompletionHandler:^(KOUser *result, NSError *error) {
-                if (result) {
-                    // success
-                    NSLog(@"userId=%@", result.ID);
-                    [self checkUserRegister:result];
-                }
-                else {
-                    // failed
-                }
-            }];
-        } else {
-            // failed
-            NSLog(@"login failed.");
+        if (!session.isOpen) {
+            switch (error.code) {
+                case KOErrorCancelled:
+                    break;
+                default:
+                    [UIAlertController alertControllerWithTitle:@"에러" message:error.description preferredStyle:UIAlertControllerStyleAlert] ;
+                    break;
+            }
         }
     }];
-    
 }
 
 -(void)checkUserRegister:(KOUser *)result{
@@ -94,7 +81,6 @@
                                                         self.userToken = result.ID;
                                                         [self userLogin];
                                                         
-                                                        [self performSegueWithIdentifier:@"MainViewSegue" sender:self];
                                                         
                                                         
                                                     }
@@ -119,6 +105,39 @@
     
 }
 
+
+
+
+//카카오 고유 아이디(비밀번호와 동일)로 서버에 등록하는 메소드!
+- (void)userRegister {
+    
+    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
+    
+    [bodyParameters setObject:[self.userToken stringValue] forKey:@"username"];
+    [bodyParameters setObject:[self.userToken stringValue] forKey:@"password"];
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/register/"
+                                                                                             parameters:bodyParameters
+                                                                              constructingBodyWithBlock:nil error:nil];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    NSURLSessionUploadTask *uploadTask;
+    uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"\n\n userRegister task error = %@\n\n", error);
+        }
+        else {
+            
+            NSLog(@"\n\n reponse = %@\n\n, reponseObject = %@\n\n", response, responseObject);
+            [self userLogin];
+        }
+    }];
+    
+    [uploadTask resume];
+}
+
 -(void)userLogin {
     
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
@@ -141,45 +160,13 @@
         else {
             
             NSLog(@"\n\n reponse = %@\n\n, reponseObject = %@\n\n", response, responseObject);
-            //            [self writeContent];
-        }
-    }];
-    
-    [uploadTask resume];
-}
-
-
-//카카오 고유 아이디(비밀번호와 동일)로 서버에 등록하는 메소드!
-- (void)userRegister {
-    
-    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
-    
-    [bodyParameters setObject:[self.userToken stringValue] forKey:@"username"];
-    [bodyParameters setObject:[self.userToken stringValue] forKey:@"password"];
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/register/"
-                                                                                             parameters:bodyParameters
-                                                                              constructingBodyWithBlock:nil error:nil];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSURLSessionUploadTask *uploadTask;
-    uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        
-        if (error) {
-            NSLog(@"\n\n userRegister task error = %@\n\n", error);
-        }
-        else {
+            [self performSegueWithIdentifier:@"MainViewSegue" sender:self];
             
-            NSLog(@"\n\n reponse = %@\n\n, reponseObject = %@\n\n", response, responseObject);
-            [self userLogin];
         }
     }];
     
     [uploadTask resume];
 }
-
-
 
 -(void)writeContent{
     
@@ -202,6 +189,7 @@
         else {
             
             NSLog(@"\n\n reponse = %@\n\n, reponseObject = %@\n\n", response, responseObject);
+            
         }
     }];
     
@@ -209,17 +197,13 @@
     
 }
 
-
-
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"MainViewSegue"]){
         NSLog(@"MainViewSegue excute!!!!!!!!!!!!!");
-        NSDictionary *userInfos = @{@"nickName":self.user.nickName , @"profile_image" : self.user.profile_image};
-        
-        MainViewController *controller = segue.destinationViewController;
-        controller.userInfos = userInfos;
+//        NSDictionary *userInfos = @{@"nickName":self.user.nickName , @"profile_image" : self.user.profile_image};
+//        
+//        MainViewController *controller = segue.destinationViewController;
+//        controller.userInfos = userInfos;
     }
     
 }
@@ -229,7 +213,7 @@
 {
     [super viewDidLoad];
     self.user = [[User alloc] init];
-    
+
 }
 
 - (void)didReceiveMemoryWarning

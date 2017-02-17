@@ -200,6 +200,7 @@
 				TargetAttributes = {
 					6FBFF6141E3F724100502924 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5AF2J46QXC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -414,6 +415,7 @@
 			baseConfigurationReference = 5454825B904CD05DB1D2B870 /* Pods-IosClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5AF2J46QXC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -430,6 +432,7 @@
 			baseConfigurationReference = B52F73AAA6FF0FF2C6D9B5DA /* Pods-IosClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5AF2J46QXC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

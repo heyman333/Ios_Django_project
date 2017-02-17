@@ -17,10 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.nameLabel.text = self.userInfos[@"nickName"];
-    self.profileImg.layer.cornerRadius = 50.0;
-    self.profileImg.layer.masksToBounds =  TRUE;
-    [self setProfileImg];
+//    self.nameLabel.text = self.userInfos[@"nickName"];
+//    self.profileImg.layer.cornerRadius = 50.0;
+//    self.profileImg.layer.masksToBounds =  TRUE;
+//    [self setProfileImg];
     
 }
 

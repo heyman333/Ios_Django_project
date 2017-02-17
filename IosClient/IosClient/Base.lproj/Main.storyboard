@@ -13,7 +13,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,12 +46,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3350" y="-823"/>
+            <point key="canvasLocation" x="-3935" y="-995"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="yBl-TA-Fbt">
             <objects>
-                <viewController id="cx2-5b-Reu" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="cx2-5b-Reu" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bke-B8-l3I"/>
                         <viewControllerLayoutGuide type="bottom" id="JSF-QZ-0fD"/>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ra-iI-Nbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2596" y="-824.43778110944538"/>
+            <point key="canvasLocation" x="-3204" y="-995"/>
         </scene>
     </scenes>
     <resources>
