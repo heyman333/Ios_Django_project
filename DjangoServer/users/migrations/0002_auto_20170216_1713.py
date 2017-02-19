@@ -8,13 +8,13 @@ import multiselectfield.db.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0003_auto_20170212_1907'),
+        ('users', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='profile',
             name='interest',
-            field=multiselectfield.db.fields.MultiSelectField(max_length=17, choices=[('C', 'C'), ('C++', 'C++'), ('JAVA', 'JAVA'), ('PYTHON', 'PYTHON')]),
+            field=multiselectfield.db.fields.MultiSelectField(max_length=225, choices=[('C', 'C'), ('C++', 'C++'), ('C#', 'C#'), ('Java', 'Java')]),
         ),
     ]

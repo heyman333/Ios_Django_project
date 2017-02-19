@@ -4,19 +4,18 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
-from testapp.views import TestViewSet, PersonViewSet
+from board.views import BoardViewSet
 from users.views import UserViewSet, ProfileViewSet
 
 router = DefaultRouter()
 router.register(r'users_List', UserViewSet)
 router.register(r'users_Profile', ProfileViewSet)
-router.register(r'testapp_Test', TestViewSet)
-router.register(r'testapp_Person', PersonViewSet)
+router.register(r'board_Board', BoardViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^testapp/', include('testapp.urls')),
+    url(r'^board/', include('board.urls')),
     url(r'^users/', include('users.urls')),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

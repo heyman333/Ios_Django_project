@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0001_initial'),
+        ('board', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='profile',
-            name='age',
-            field=models.IntegerField(max_length=2),
+            model_name='board',
+            name='date',
+            field=models.DateTimeField(),
         ),
     ]
