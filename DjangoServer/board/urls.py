@@ -5,6 +5,7 @@ from board import views
 
 router = DefaultRouter()
 router.register(r'board', views.BoardViewSet)
+router.register(r'comment', views.CommentViewset)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

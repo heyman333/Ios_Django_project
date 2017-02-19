@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from board.models import Board
+from board.models import Board, Comment
 
 
 class BoardSerializer(serializers.HyperlinkedModelSerializer):
@@ -29,3 +29,10 @@ class BoardSerializer(serializers.HyperlinkedModelSerializer):
                   'sun',
                   'sun_time',
                   'people_num',)
+
+class CommentSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = Comment
+        fields = ['id', 'url', 'owner', 'name', 'date', 'content', 'board_id']

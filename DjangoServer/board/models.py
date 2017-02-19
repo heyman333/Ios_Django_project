@@ -26,3 +26,15 @@ class Board(models.Model):
 
     class Meta:
         ordering = ('id',)
+
+class Comment(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    date = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=10)
+    content = models.TextField()
+    board_id = models.IntegerField()
+    owner = models.ForeignKey('auth.User', related_name='board_Comment')
+
+    class Meta:
+        ordering = ('id',)
