@@ -33,7 +33,7 @@ class Comment(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=10)
     content = models.TextField()
-    board_id = models.IntegerField()
+    board_id = models.IntegerField(null=False)
     owner = models.ForeignKey('auth.User', related_name='board_Comment')
 
     class Meta:

@@ -29,7 +29,6 @@ class UserCreateSerializer(serializers.HyperlinkedModelSerializer):
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
-    image = serializers.ImageField(max_length=None, use_url=True)
     interest = fields.MultipleChoiceField(choices=INTEREST_CHOICES)
 
     class Meta:

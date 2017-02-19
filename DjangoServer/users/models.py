@@ -38,8 +38,8 @@ class Profile(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=10)
-    interest = MultiSelectField(choices = INTEREST_CHOICES, max_length=225)
-    image = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
+    interest = MultiSelectField(choices = INTEREST_CHOICES, max_length=225, null=True, blank=True)
+    image = models.ImageField(upload_to='Images/', blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='users_Profile')
 
     class Meta:
