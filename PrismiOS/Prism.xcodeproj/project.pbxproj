@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CF8CF95F6FBB8826093AD86 /* libPods-PrismiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D92CA73A825B10CAF869E0 /* libPods-PrismiOS.a */; };
 		6F1129A71E595BEC0030D7A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1129A61E595BEC0030D7A1 /* MainViewController.m */; };
+		6F22B1F21E5C0387007CD0AF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */; };
 		6F9ED83F1E5850A800C4BE90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED83E1E5850A800C4BE90 /* main.m */; };
 		6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8411E5850A800C4BE90 /* AppDelegate.m */; };
 		6F9ED8451E5850A800C4BE90 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8441E5850A800C4BE90 /* LoginViewController.m */; };
@@ -24,6 +25,7 @@
 		40DE4C19C9B61F6DBB2A0741 /* Pods-PrismiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrismiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrismiOS/Pods-PrismiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1129A51E595BEC0030D7A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6F1129A61E595BEC0030D7A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6F9ED83A1E5850A800C4BE90 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9ED83E1E5850A800C4BE90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F9ED8401E5850A800C4BE90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				6F9ED8461E5850A800C4BE90 /* Main.storyboard */,
+				6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */,
 			);
 			name = StoryBoard;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				6FA132FC1E586C8900054172 /* login_prism.png in Resources */,
 				6F9ED8571E58670D00C4BE90 /* Loading_Screen.jpg in Resources */,
 				6F9ED84A1E5850A800C4BE90 /* Assets.xcassets in Resources */,
+				6F22B1F21E5C0387007CD0AF /* Launch Screen.storyboard in Resources */,
 				6F9ED8481E5850A800C4BE90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

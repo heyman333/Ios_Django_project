@@ -17,8 +17,7 @@
 @implementation AppDelegate
 
 - (void)setupEntryController {
-    
-    NSLog(@"셋업!");
+
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"navigator"];
     self.mainViewController = [storyBoard instantiateViewControllerWithIdentifier:@"navigator"];

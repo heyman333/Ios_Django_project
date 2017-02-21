@@ -28,19 +28,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EoK-hL-FkH"/>
                     <connections>
                         <segue destination="uiz-f6-swv" kind="show" identifier="profilset" id="Obo-wb-weT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1680" y="-954"/>
+            <point key="canvasLocation" x="-1738" y="-1018"/>
         </scene>
         <!--Profile Setting Controller-->
         <scene sceneID="57k-uE-dFK">
             <objects>
-                <viewController storyboardIdentifier="ProfileSetting" id="uiz-f6-swv" customClass="ProfileSettingController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileSettingController" id="uiz-f6-swv" customClass="ProfileSettingController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F7E-mq-tHD"/>
                         <viewControllerLayoutGuide type="bottom" id="Vig-oE-aHI"/>
@@ -88,17 +87,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aak-b0-L8Y">
-                                        <rect key="frame" x="261" y="0.0" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="5VW-lb-KXi" kind="show" id="yEy-hy-haA"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-K3-GBl">
+                                <rect key="frame" x="0.0" y="9" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="ZJo-R1-vux">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ylC-Nt-CAO">
+                                            <connections>
+                                                <segue destination="5VW-lb-KXi" kind="show" identifier="main" id="cRG-on-1JD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -109,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOW-k3-G6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="-955"/>
+            <point key="canvasLocation" x="-1035" y="-1018"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="zzq-jx-B4e">
@@ -124,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MainVIew" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLU-WJ-hbf">
-                                <rect key="frame" x="123" y="274" width="74" height="21"/>
+                                <rect key="frame" x="123" y="273.5" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -145,6 +149,15 @@
                                     <action selector="invokeLogout:" destination="5VW-lb-KXi" eventType="touchUpInside" id="mgI-hE-npe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQQ-jb-uY6" userLabel="나는 iOS개발자 한영수다 (글쓰기)">
+                                <rect key="frame" x="16" y="334" width="288" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94913894117998232" green="1" blue="0.70991554968902482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="나는 iOS개발자 한영수다 (글쓰기) "/>
+                                <connections>
+                                    <action selector="writecontent:" destination="5VW-lb-KXi" eventType="touchUpInside" id="9AC-9D-rcJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,16 +168,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAr-Dt-sPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-908" y="-185"/>
+            <point key="canvasLocation" x="-1035" y="-218.66197183098592"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yqc-pW-mcC">
             <objects>
-                <navigationController storyboardIdentifier="navigator" automaticallyAdjustsScrollViewInsets="NO" id="rS0-zq-K1B" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigator" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rS0-zq-K1B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="mnX-ig-hdO">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="mnX-ig-hdO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -174,13 +192,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5P-4D-ZF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2702" y="-681"/>
+            <point key="canvasLocation" x="-2479" y="-1018"/>
         </scene>
     </scenes>
     <resources>
         <image name="login_prism.png" width="676" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yEy-hy-haA"/>
+        <segue reference="cRG-on-1JD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
+@property const NSString *serverToken;
 @end

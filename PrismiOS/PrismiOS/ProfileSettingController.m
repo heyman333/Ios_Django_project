@@ -7,12 +7,13 @@
 //
 
 #import "ProfileSettingController.h"
+#import "MainViewController.h"
 #import <AFNetworking.h>
 
 
 @interface ProfileSettingController ()
 @property (nonatomic) NSString *userId;
-
+@property (nonatomic) NSString *serverToken;
 @end
 
 @implementation ProfileSettingController
@@ -24,8 +25,59 @@
     self.nickName.text = [self.userInfos objectForKey:@"nickname"];
     self.userID = [NSString stringWithFormat:@"%@",[self.userInfos objectForKey:@"userID"]];
 //    [self userRegister];
+    [self userRegisterCheck];
     [self profileImgSet];
 }
+
+
+
+-(void)userRegisterCheck{
+    
+    __block NSArray *results;
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/list/"];
+    NSURL *url = [NSURL URLWithString:destinationURLString];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request
+                                                completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                                    
+                                                    results = responseObject;
+                                                    NSLog(@"results : %@", results);
+//                                                    NSLog(@"%@", self.userID)
+                                                    
+                                                    //등록된 유저를 찾는 반복문
+                                                    for (NSInteger i = 0; i<results.count; i++) {
+                                                        
+                                                        if([[results[i] objectForKey:@"username"] isEqualToString:self.userID]){
+                                                            NSLog(@"이미 등록된 유저입니다.");
+                                                        }
+                                                        else{
+                                                            NSLog(@"서버에 유저를 등록합니다.");
+                                                            [self userRegister];
+                                                        }
+                                                    
+                                                        }
+                                                        
+                                                    }
+                                                    //                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                    //                                                        [self.tableView reloadData];
+                                                    //                                                    });
+                                                    
+                                                    //                                                    self performSelectorOnMainThread:<#(nonnull SEL)#> withObject:<#(nullable id)#> waitUntilDone:<#(BOOL)#>
+                                                    
+                                        ];
+    [dataTask resume];
+    
+
+}
+
+
+
 
 -(void)profileImgSet{
     
@@ -53,8 +105,6 @@
                                                   
                                               }];
     [downloadTask resume];
-    
-    
 }
 
 
@@ -112,7 +162,8 @@
         else {
             NSLog(@"토큰을 받아왔습니다");
             NSLog(@"%@",responseObject);
-            
+            self.serverToken = [responseObject objectForKey:@"token"];
+            [self performSegueWithIdentifier:@"main" sender:self];
         }
     }];
     
@@ -121,6 +172,12 @@
 
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    MainViewController *mainviewController = segue.destinationViewController;
+    mainviewController.serverToken = self.serverToken;
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

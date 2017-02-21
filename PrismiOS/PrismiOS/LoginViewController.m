@@ -41,7 +41,6 @@
     
     // ensure old session was closed
     [[KOSession sharedSession] close];
-    NSLog(@"올드세션 꺼져!!!시발놈아!!");
     
     [[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
         if ([[KOSession sharedSession] isOpen]) {
@@ -70,14 +69,6 @@
     }];
     
 }
-
-//-(void)gotoProfileSetPage{
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LogIn" bundle:nil];
-//    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"ProfileSetting"];
-//    viewController.modalTransitionStyle = UIModalPresentationPageSheet;
-//    [self presentViewController:viewController animated:YES completion:nil];
-//    
-//}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender{
 
