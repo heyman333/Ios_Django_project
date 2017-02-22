@@ -12,7 +12,6 @@
 
 @interface MainViewController ()
 @property NSString *userID;
-
 @end
 
 @implementation MainViewController
@@ -20,12 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.logoutBtn.layer.cornerRadius = 10;
-
+    self.logoutBtn.layer.masksToBounds = YES;
+    self.writeContentBtn.layer.cornerRadius = 35;
+    self.writeContentBtn.layer.masksToBounds = YES;
     
+    [self.writeContentBtn.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [self.writeContentBtn.layer setBorderWidth: 0.7];
+
+
     [KOSessionTask meTaskWithCompletionHandler:^(KOUser* result, NSError *error) {
         if (result) {
             // success
             self.userID = [NSString stringWithFormat:@"%@",result.ID];
+            
+            self.welcomeLB.text = [NSString stringWithFormat:@"%@님 환영합니다.",[result propertyForKey:@"nickname"]];
             [self getToken];
             
         } else {
