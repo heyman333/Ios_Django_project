@@ -11,7 +11,7 @@
 #import <AFNetworking.h>
 
 
-@interface ProfileSettingController ()
+@interface ProfileSettingController () <UIScrollViewDelegate>
 @property (nonatomic) NSString *userId;
 @property (nonatomic) NSString *serverToken;
 @end
@@ -20,8 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.profileImg.layer.cornerRadius = 60.0;
     self.profileImg.layer.masksToBounds = YES;
+    [self.profileImg.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [self.profileImg.layer setBorderWidth: 2.0];
+
+    
+    
+    
     self.nickName.text = [self.userInfos objectForKey:@"nickname"];
     self.userID = [NSString stringWithFormat:@"%@",[self.userInfos objectForKey:@"userID"]];
 //    [self userRegister];
@@ -131,7 +138,6 @@
         }
         else {
             NSLog(@"등록 성공!");
-            [self getToken];
             
         }
     }];
@@ -139,43 +145,11 @@
     [uploadTask resume];
 }
 
-
-
--(void)getToken{
-    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
-    
-    [bodyParameters setObject:self.userID forKey:@"username"];
-    [bodyParameters setObject:self.userID forKey:@"password"];
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/auth/token/"
-                                                                                             parameters:bodyParameters
-                                                                              constructingBodyWithBlock:nil error:nil];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSURLSessionUploadTask *uploadTask;
-    uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        
-        if (error) {
-            NSLog(@"\n\n getToken task error = %@\n\n", error);
-        }
-        else {
-            NSLog(@"토큰을 받아왔습니다");
-            NSLog(@"%@",responseObject);
-            self.serverToken = [responseObject objectForKey:@"token"];
-            [self performSegueWithIdentifier:@"main" sender:self];
-        }
-    }];
-    
-    [uploadTask resume];
-}
-
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     MainViewController *mainviewController = segue.destinationViewController;
     mainviewController.serverToken = self.serverToken;
+//    mainviewController.userID = self.userID;
 
 }
 
