@@ -4,8 +4,8 @@ from rest_framework.routers import DefaultRouter
 from board import views
 
 router = DefaultRouter()
-router.register(r'board', views.BoardViewSet)
-router.register(r'comment', views.CommentViewset)
+router.register(r'list', views.BoardViewSet)
+router.register(r'comments', views.CommentViewset)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

@@ -9,9 +9,9 @@ from users.views import UserViewSet, ProfileViewSet
 
 router = DefaultRouter()
 router.register(r'users_List', UserViewSet)
-router.register(r'users_Profile', ProfileViewSet)
-router.register(r'board_Board', BoardViewSet)
-router.register(r'board_Comment', CommentViewset)
+router.register(r'users_Profiles', ProfileViewSet)
+router.register(r'board_List', BoardViewSet)
+router.register(r'board_Comments', CommentViewset)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
