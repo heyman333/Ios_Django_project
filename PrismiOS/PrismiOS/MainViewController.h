@@ -10,10 +10,8 @@
 
 @interface MainViewController : UIViewController
 @property const NSString *serverToken;
-//@property const NSString *userID;
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLB;
 @property (weak, nonatomic) IBOutlet UIButton *writeContentBtn;
 @property (weak, nonatomic) IBOutlet UITableView *writeContentsTable;
-
 @end

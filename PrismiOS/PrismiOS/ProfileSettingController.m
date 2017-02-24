@@ -21,25 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.backImg.
-
     self.profileImg.layer.cornerRadius = 60.0;
     self.profileImg.layer.masksToBounds = YES;
     [self.profileImg.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [self.profileImg.layer setBorderWidth: 2.0];
 
-    
-    
-    
     self.nickName.text = [self.userInfos objectForKey:@"nickname"];
     self.userID = [NSString stringWithFormat:@"%@",[self.userInfos objectForKey:@"userID"]];
-//    [self userRegister];
     [self userRegisterCheck];
     [self profileImgSet];
 }
 
-
-
+//등록된 유저인지 찾아내는 메소드
 -(void)userRegisterCheck{
     
     __block NSArray *results;
@@ -81,13 +74,9 @@
                                                     
                                         ];
     [dataTask resume];
-    
 
 }
-
-
-
-
+//카톡 프로필을 설정하는 메소드
 -(void)profileImgSet{
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];

@@ -14,12 +14,14 @@
 @interface MainViewController ()
 <UITableViewDelegate,UITableViewDataSource>
 @property NSString *userID;
+@property NSArray *boardArr;
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.boardArr = @[];
     self.writeContentsTable.dataSource =self;
     self.writeContentsTable.delegate =self;
     
@@ -30,7 +32,6 @@
     
     [self.writeContentBtn.layer setBorderColor:[[UIColor blackColor] CGColor]];
     [self.writeContentBtn.layer setBorderWidth: 0.7];
-
 
     [KOSessionTask meTaskWithCompletionHandler:^(KOUser* result, NSError *error) {
         if (result) {
@@ -47,11 +48,68 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//글목록을 불러오자!
+-(void)getboardContents{
+//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+//    
+//    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/board/"];
+//    
+//    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",self.serverToken];
+//    NSURL *url = [NSURL URLWithString:destinationURLString];
+//    
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    [request setHTTPMethod:@"GET"];
+//    
+//    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request
+//                                                completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+//                                                    
+//                                                    NSLog(@"results123 : %@",  responseObject);
+//
+//                                                }
+//                                      //                                                    dispatch_async(dispatch_get_main_queue(), ^{
+//                                      //                                                        [self.tableView reloadData];
+//                                      //                                                    });
+//                                      
+//                                      //                                                    self performSelectorOnMainThread:<#(nonnull SEL)#> withObject:<#(nullable id)#> waitUntilDone:<#(BOOL)#>
+//                                      
+//                                      ];
+//    [dataTask resume];
+    
+    
+//    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
+    
+//    [bodyParameters setObject:@"타이틀입니다.2" forKey:@"title"];
+//    [bodyParameters setObject:@"한영수2" forKey:@"name"];
+//    [bodyParameters setObject:@"나는 iOS개발자다2     !!!" forKey:@"content"];
+    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/board/";
+    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",self.serverToken];
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
+    
+    //    NSURLSessionUploadTask *uploadTask;
+    
+    
+    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success!");
+        self.boardArr = responseObject;
+        
+        [self.writeContentsTable reloadData];
+        
+    }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             NSLog(@"error다 이색기야!: %@", error);
+         }];
+}
+
 
 -(void)getToken{
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
@@ -75,7 +133,9 @@
             NSLog(@"토큰을 받아왔습니다");
             NSLog(@"%@",responseObject);
             self.serverToken = [responseObject objectForKey:@"token"];
-            //            [self performSegueWithIdentifier:@"main" sender:self];
+            [self getboardContents];
+            
+            
         }
     }];
     
@@ -83,29 +143,29 @@
 }
 
 
-- (IBAction)writecontent:(UIButton *)sender {
-    
-    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
-    
-    [bodyParameters setObject:@"타이틀입니다.2" forKey:@"title"];
-    [bodyParameters setObject:@"한영수2" forKey:@"name"];
-    [bodyParameters setObject:@"나는 iOS개발자다2     !!!" forKey:@"content"];
-    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/board/";
-    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",self.serverToken];
-    
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
-    
-    //    NSURLSessionUploadTask *uploadTask;
-    
-    [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"success!");
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error다 이색기야!: %@", error);
-    }];
-}
+//- (IBAction)writecontent:(UIButton *)sender {
+//    
+//    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
+//    
+//    [bodyParameters setObject:@"타이틀입니다.2" forKey:@"title"];
+//    [bodyParameters setObject:@"한영수2" forKey:@"name"];
+//    [bodyParameters setObject:@"나는 iOS개발자다2     !!!" forKey:@"content"];
+//    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/board/";
+//    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",self.serverToken];
+//    
+//    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
+//    
+//    //    NSURLSessionUploadTask *uploadTask;
+//    
+//    [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"success!");
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"error다 이색기야!: %@", error);
+//    }];
+//}
 
 
 - (IBAction)invokeLogout:(UIButton *)sender {
@@ -123,23 +183,24 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    
-    return 2;
+    return self.boardArr.count;
     
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
+    NSDictionary *dicTemp = [self.boardArr objectAtIndex:indexPath.row];
+
     BoardContentsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardContentsCell"];
     
     
     if (cell == nil) {
         cell = [[BoardContentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BoardContentsCell"];
     }
-    
-    cell.writerLB.text = @"한영수";
-    cell.writingTitleLB.text = @"반갑습니다.";
+
+    cell.writerLB.text = [dicTemp objectForKey:@"name"];
+    cell.writingTitleLB.text = [dicTemp objectForKey:@"title"];
     cell.tagLB.text = @"JAVA, 웹프로그래밍";
     
     

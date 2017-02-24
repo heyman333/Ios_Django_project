@@ -60,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F0557FB1E5FD7CA0092B82B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				6F9ED8401E5850A800C4BE90 /* AppDelegate.h */,
+				6F9ED8411E5850A800C4BE90 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 		6F9ED8311E5850A800C4BE90 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +92,6 @@
 			children = (
 				6F9ED8551E5866ED00C4BE90 /* Imgs */,
 				6F9ED8541E5850C000C4BE90 /* StoryBoard */,
-				6F9ED8401E5850A800C4BE90 /* AppDelegate.h */,
-				6F9ED8411E5850A800C4BE90 /* AppDelegate.m */,
 				6F9ED8431E5850A800C4BE90 /* LoginViewController.h */,
 				6F9ED8441E5850A800C4BE90 /* LoginViewController.m */,
 				6FA132FD1E58776C00054172 /* ProfileSettingController.h */,
@@ -95,6 +102,7 @@
 				6F1129A61E595BEC0030D7A1 /* MainViewController.m */,
 				6F9ED8491E5850A800C4BE90 /* Assets.xcassets */,
 				6F9ED84E1E5850A800C4BE90 /* Info.plist */,
+				6F0557FB1E5FD7CA0092B82B /* AppDelegate */,
 				6F9ED83D1E5850A800C4BE90 /* Supporting Files */,
 			);
 			path = PrismiOS;
