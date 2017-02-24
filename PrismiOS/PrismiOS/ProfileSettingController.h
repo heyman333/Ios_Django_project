@@ -13,5 +13,6 @@
 @property NSString *userID;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImg;
 @property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (weak, nonatomic) IBOutlet UIView *backImg;
 
 @end

@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.backImg.
 
     self.profileImg.layer.cornerRadius = 60.0;
     self.profileImg.layer.masksToBounds = YES;

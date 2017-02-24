@@ -10,6 +10,7 @@
 		2CF8CF95F6FBB8826093AD86 /* libPods-PrismiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D92CA73A825B10CAF869E0 /* libPods-PrismiOS.a */; };
 		6F1129A71E595BEC0030D7A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1129A61E595BEC0030D7A1 /* MainViewController.m */; };
 		6F22B1F21E5C0387007CD0AF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */; };
+		6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */; };
 		6F9ED83F1E5850A800C4BE90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED83E1E5850A800C4BE90 /* main.m */; };
 		6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8411E5850A800C4BE90 /* AppDelegate.m */; };
 		6F9ED8451E5850A800C4BE90 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8441E5850A800C4BE90 /* LoginViewController.m */; };
@@ -26,6 +27,8 @@
 		6F1129A51E595BEC0030D7A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6F1129A61E595BEC0030D7A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardContentsCell.h; sourceTree = "<group>"; };
+		6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardContentsCell.m; sourceTree = "<group>"; };
 		6F9ED83A1E5850A800C4BE90 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9ED83E1E5850A800C4BE90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F9ED8401E5850A800C4BE90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				6F9ED8441E5850A800C4BE90 /* LoginViewController.m */,
 				6FA132FD1E58776C00054172 /* ProfileSettingController.h */,
 				6FA132FE1E58776C00054172 /* ProfileSettingController.m */,
+				6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */,
+				6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */,
 				6F1129A51E595BEC0030D7A1 /* MainViewController.h */,
 				6F1129A61E595BEC0030D7A1 /* MainViewController.m */,
 				6F9ED8491E5850A800C4BE90 /* Assets.xcassets */,
@@ -268,6 +273,7 @@
 				6F9ED8451E5850A800C4BE90 /* LoginViewController.m in Sources */,
 				6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */,
 				6F1129A71E595BEC0030D7A1 /* MainViewController.m in Sources */,
+				6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */,
 				6F9ED83F1E5850A800C4BE90 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +384,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40DE4C19C9B61F6DBB2A0741 /* Pods-PrismiOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5AF2J46QXC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,7 +400,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77E649D68EFB75A3A49FF8C3 /* Pods-PrismiOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5AF2J46QXC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,10 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import "BoardContentsCell.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 #import <AFNetworking.h>
 
 @interface MainViewController ()
+<UITableViewDelegate,UITableViewDataSource>
 @property NSString *userID;
 @end
 
@@ -18,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.writeContentsTable.dataSource =self;
+    self.writeContentsTable.delegate =self;
+    
     self.logoutBtn.layer.cornerRadius = 10;
     self.logoutBtn.layer.masksToBounds = YES;
     self.writeContentBtn.layer.cornerRadius = 35;
@@ -111,6 +116,46 @@
     }];
     
 }
+
+
+//테이블 뷰 데이터소스, 테이블 뷰 델레게이트 구현
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    
+    
+    return 2;
+    
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    BoardContentsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardContentsCell"];
+    
+    
+    if (cell == nil) {
+        cell = [[BoardContentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BoardContentsCell"];
+    }
+    
+    cell.writerLB.text = @"한영수";
+    cell.writingTitleLB.text = @"반갑습니다.";
+    cell.tagLB.text = @"JAVA, 웹프로그래밍";
+    
+    
+    return cell;
+    
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+}
+
+
+
+
 
 
 
