@@ -9,6 +9,7 @@ class BoardSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id',
                   'url',
                   'owner',
+                  'category',
                   'title',
                   'date',
                   'name',
