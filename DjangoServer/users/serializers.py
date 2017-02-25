@@ -33,4 +33,4 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ('url', 'owner', 'id', 'name', 'interest', 'image')
+        fields = ('url', 'owner', 'id', 'name', 'interest', 'image', 'myself')

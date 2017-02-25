@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from board.models import Board, Comment
 
-
 class BoardSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
