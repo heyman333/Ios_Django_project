@@ -2,6 +2,16 @@ from django.db import models
 
 class Board(models.Model):
 
+    CATEGORY_CHOICES = (
+        ('웹', '웹'),
+        ('모바일', '모바일'),
+        ('응용프로그래밍', '응용프로그래밍'),
+        ('게임프로그래밍', '게임프로그래밍'),
+        ('빅데이터', '빅데이터'),
+        ('iOS', 'iOS'),
+
+    )
+
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
