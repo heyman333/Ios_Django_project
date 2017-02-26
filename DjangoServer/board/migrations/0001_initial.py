@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
             name='Board',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('category', models.CharField(max_length=10, default=None, choices=[('웹', '웹'), ('모바일', '모바일'), ('빅데이터', '빅데이터'), ('디자인', '디자인'), ('기타', '기타')])),
                 ('title', models.CharField(max_length=100)),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('name', models.CharField(max_length=10)),
