@@ -8,8 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2CF8CF95F6FBB8826093AD86 /* libPods-PrismiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D92CA73A825B10CAF869E0 /* libPods-PrismiOS.a */; };
-		6F1129A71E595BEC0030D7A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1129A61E595BEC0030D7A1 /* MainViewController.m */; };
+		6F1129A71E595BEC0030D7A1 /* WebContents.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1129A61E595BEC0030D7A1 /* WebContents.m */; };
 		6F22B1F21E5C0387007CD0AF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */; };
+		6F35CB8E1E618649004028E6 /* programming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F35CB8D1E618649004028E6 /* programming.jpg */; };
+		6F38DBBC1E6168220051B22C /* back_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F38DBBB1E6168220051B22C /* back_new.png */; };
+		6F38DBBE1E6168F90051B22C /* Back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F38DBBD1E6168F90051B22C /* Back2.png */; };
+		6F38DBC01E616ABE0051B22C /* _back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F38DBBF1E616ABE0051B22C /* _back2.png */; };
+		6F38DBC31E616D1B0051B22C /* AppMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F38DBC21E616D1B0051B22C /* AppMainViewController.m */; };
+		6F38DBCB1E6171E70051B22C /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F38DBCA1E6171E70051B22C /* DataCenter.m */; };
+		6F65BE771E6311C400CAD9C7 /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F65BE761E6311C400CAD9C7 /* user1.png */; };
+		6F65BE7B1E63189D00CAD9C7 /* DetailContentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F65BE7A1E63189D00CAD9C7 /* DetailContentsView.m */; };
+		6F65BE7E1E63209400CAD9C7 /* StudyDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */; };
 		6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */; };
 		6F9ED83F1E5850A800C4BE90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED83E1E5850A800C4BE90 /* main.m */; };
 		6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8411E5850A800C4BE90 /* AppDelegate.m */; };
@@ -24,9 +33,22 @@
 
 /* Begin PBXFileReference section */
 		40DE4C19C9B61F6DBB2A0741 /* Pods-PrismiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrismiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrismiOS/Pods-PrismiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6F1129A51E595BEC0030D7A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		6F1129A61E595BEC0030D7A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6F1129A51E595BEC0030D7A1 /* WebContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebContents.h; sourceTree = "<group>"; };
+		6F1129A61E595BEC0030D7A1 /* WebContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebContents.m; sourceTree = "<group>"; };
 		6F22B1F11E5C0387007CD0AF /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		6F35CB8D1E618649004028E6 /* programming.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = programming.jpg; sourceTree = "<group>"; };
+		6F38DBBB1E6168220051B22C /* back_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_new.png; sourceTree = "<group>"; };
+		6F38DBBD1E6168F90051B22C /* Back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back2.png; sourceTree = "<group>"; };
+		6F38DBBF1E616ABE0051B22C /* _back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _back2.png; sourceTree = "<group>"; };
+		6F38DBC11E616D1B0051B22C /* AppMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMainViewController.h; sourceTree = "<group>"; };
+		6F38DBC21E616D1B0051B22C /* AppMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMainViewController.m; sourceTree = "<group>"; };
+		6F38DBC91E6171E70051B22C /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
+		6F38DBCA1E6171E70051B22C /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
+		6F65BE761E6311C400CAD9C7 /* user1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user1.png; sourceTree = "<group>"; };
+		6F65BE791E63189D00CAD9C7 /* DetailContentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailContentsView.h; sourceTree = "<group>"; };
+		6F65BE7A1E63189D00CAD9C7 /* DetailContentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailContentsView.m; sourceTree = "<group>"; };
+		6F65BE7C1E63209400CAD9C7 /* StudyDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDayTableViewCell.h; sourceTree = "<group>"; };
+		6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyDayTableViewCell.m; sourceTree = "<group>"; };
 		6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardContentsCell.h; sourceTree = "<group>"; };
 		6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardContentsCell.m; sourceTree = "<group>"; };
 		6F9ED83A1E5850A800C4BE90 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +91,71 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
+		6F38DBC41E616D290051B22C /* AppMain */ = {
+			isa = PBXGroup;
+			children = (
+				6F38DBC11E616D1B0051B22C /* AppMainViewController.h */,
+				6F38DBC21E616D1B0051B22C /* AppMainViewController.m */,
+			);
+			name = AppMain;
+			sourceTree = "<group>";
+		};
+		6F38DBC51E616D410051B22C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6F9ED8431E5850A800C4BE90 /* LoginViewController.h */,
+				6F9ED8441E5850A800C4BE90 /* LoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		6F38DBC61E616D510051B22C /* ProfileSetting */ = {
+			isa = PBXGroup;
+			children = (
+				6FA132FD1E58776C00054172 /* ProfileSettingController.h */,
+				6FA132FE1E58776C00054172 /* ProfileSettingController.m */,
+			);
+			name = ProfileSetting;
+			sourceTree = "<group>";
+		};
+		6F38DBC71E616D660051B22C /* BoardContents */ = {
+			isa = PBXGroup;
+			children = (
+				6F1129A51E595BEC0030D7A1 /* WebContents.h */,
+				6F1129A61E595BEC0030D7A1 /* WebContents.m */,
+			);
+			name = BoardContents;
+			sourceTree = "<group>";
+		};
+		6F38DBC81E616D9C0051B22C /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */,
+				6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */,
+				6F65BE7C1E63209400CAD9C7 /* StudyDayTableViewCell.h */,
+				6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */,
+			);
+			name = customCell;
+			sourceTree = "<group>";
+		};
+		6F38DBCC1E6173280051B22C /* DataCenter */ = {
+			isa = PBXGroup;
+			children = (
+				6F38DBC91E6171E70051B22C /* DataCenter.h */,
+				6F38DBCA1E6171E70051B22C /* DataCenter.m */,
+			);
+			name = DataCenter;
+			sourceTree = "<group>";
+		};
+		6F65BE781E63186300CAD9C7 /* DetailBoardContents */ = {
+			isa = PBXGroup;
+			children = (
+				6F65BE791E63189D00CAD9C7 /* DetailContentsView.h */,
+				6F65BE7A1E63189D00CAD9C7 /* DetailContentsView.m */,
+			);
+			name = DetailBoardContents;
+			sourceTree = "<group>";
+		};
 		6F9ED8311E5850A800C4BE90 = {
 			isa = PBXGroup;
 			children = (
@@ -90,16 +177,15 @@
 		6F9ED83C1E5850A800C4BE90 /* PrismiOS */ = {
 			isa = PBXGroup;
 			children = (
+				6F65BE781E63186300CAD9C7 /* DetailBoardContents */,
+				6F38DBCC1E6173280051B22C /* DataCenter */,
+				6F38DBC81E616D9C0051B22C /* customCell */,
+				6F38DBC71E616D660051B22C /* BoardContents */,
+				6F38DBC61E616D510051B22C /* ProfileSetting */,
+				6F38DBC51E616D410051B22C /* Login */,
+				6F38DBC41E616D290051B22C /* AppMain */,
 				6F9ED8551E5866ED00C4BE90 /* Imgs */,
 				6F9ED8541E5850C000C4BE90 /* StoryBoard */,
-				6F9ED8431E5850A800C4BE90 /* LoginViewController.h */,
-				6F9ED8441E5850A800C4BE90 /* LoginViewController.m */,
-				6FA132FD1E58776C00054172 /* ProfileSettingController.h */,
-				6FA132FE1E58776C00054172 /* ProfileSettingController.m */,
-				6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */,
-				6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */,
-				6F1129A51E595BEC0030D7A1 /* MainViewController.h */,
-				6F1129A61E595BEC0030D7A1 /* MainViewController.m */,
 				6F9ED8491E5850A800C4BE90 /* Assets.xcassets */,
 				6F9ED84E1E5850A800C4BE90 /* Info.plist */,
 				6F0557FB1E5FD7CA0092B82B /* AppDelegate */,
@@ -128,8 +214,13 @@
 		6F9ED8551E5866ED00C4BE90 /* Imgs */ = {
 			isa = PBXGroup;
 			children = (
+				6F65BE761E6311C400CAD9C7 /* user1.png */,
+				6F35CB8D1E618649004028E6 /* programming.jpg */,
+				6F38DBBF1E616ABE0051B22C /* _back2.png */,
+				6F38DBBB1E6168220051B22C /* back_new.png */,
 				6F9ED8561E58670D00C4BE90 /* Loading_Screen.jpg */,
 				6FA132FB1E586C8900054172 /* login_prism.png */,
+				6F38DBBD1E6168F90051B22C /* Back2.png */,
 			);
 			name = Imgs;
 			sourceTree = "<group>";
@@ -214,11 +305,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F65BE771E6311C400CAD9C7 /* user1.png in Resources */,
 				6FA132FC1E586C8900054172 /* login_prism.png in Resources */,
+				6F38DBBC1E6168220051B22C /* back_new.png in Resources */,
+				6F35CB8E1E618649004028E6 /* programming.jpg in Resources */,
 				6F9ED8571E58670D00C4BE90 /* Loading_Screen.jpg in Resources */,
 				6F9ED84A1E5850A800C4BE90 /* Assets.xcassets in Resources */,
+				6F38DBBE1E6168F90051B22C /* Back2.png in Resources */,
 				6F22B1F21E5C0387007CD0AF /* Launch Screen.storyboard in Resources */,
 				6F9ED8481E5850A800C4BE90 /* Main.storyboard in Resources */,
+				6F38DBC01E616ABE0051B22C /* _back2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +373,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F65BE7E1E63209400CAD9C7 /* StudyDayTableViewCell.m in Sources */,
 				6FA132FF1E58776C00054172 /* ProfileSettingController.m in Sources */,
 				6F9ED8451E5850A800C4BE90 /* LoginViewController.m in Sources */,
+				6F38DBCB1E6171E70051B22C /* DataCenter.m in Sources */,
 				6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */,
-				6F1129A71E595BEC0030D7A1 /* MainViewController.m in Sources */,
+				6F1129A71E595BEC0030D7A1 /* WebContents.m in Sources */,
+				6F38DBC31E616D1B0051B22C /* AppMainViewController.m in Sources */,
 				6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */,
+				6F65BE7B1E63189D00CAD9C7 /* DetailContentsView.m in Sources */,
 				6F9ED83F1E5850A800C4BE90 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

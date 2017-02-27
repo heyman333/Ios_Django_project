@@ -7,7 +7,7 @@
 //
 
 #import "ProfileSettingController.h"
-#import "MainViewController.h"
+#import "AppMainViewController.h"
 #import <AFNetworking.h>
 
 
@@ -25,7 +25,7 @@
     self.profileImg.layer.masksToBounds = YES;
     [self.profileImg.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [self.profileImg.layer setBorderWidth: 2.0];
-
+    
     self.nickName.text = [self.userInfos objectForKey:@"nickname"];
     self.userID = [NSString stringWithFormat:@"%@",[self.userInfos objectForKey:@"userID"]];
     [self userRegisterCheck];
@@ -36,12 +36,13 @@
 -(void)userRegisterCheck{
     
     __block NSArray *results;
+    __block BOOL isregisterd;
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/list/"];
     NSURL *url = [NSURL URLWithString:destinationURLString];
-
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
     
@@ -49,32 +50,30 @@
                                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                                     
                                                     results = responseObject;
-                                                    NSLog(@"results : %@", results);
-//                                                    NSLog(@"%@", self.userID)
-                                                    
+                                                    //                                                    NSLog(@"results : %@", results);
                                                     //등록된 유저를 찾는 반복문
                                                     for (NSInteger i = 0; i<results.count; i++) {
                                                         
                                                         if([[results[i] objectForKey:@"username"] isEqualToString:self.userID]){
-                                                            NSLog(@"이미 등록된 유저입니다.");
+                                                            isregisterd = YES;
                                                         }
-                                                        else{
-                                                            NSLog(@"서버에 유저를 등록합니다.");
+                                                        
+                                                        if (!isregisterd) {
                                                             [self userRegister];
-                                                        }
-                                                    
                                                         }
                                                         
                                                     }
-                                                    //                                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                                    //                                                        [self.tableView reloadData];
-                                                    //                                                    });
                                                     
-                                                    //                                                    self performSelectorOnMainThread:<#(nonnull SEL)#> withObject:<#(nullable id)#> waitUntilDone:<#(BOOL)#>
-                                                    
-                                        ];
+                                                }
+                                      //                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                      //                                                        [self.tableView reloadData];
+                                      //                                                    });
+                                      
+                                      //
+                                      
+                                      ];
     [dataTask resume];
-
+    
 }
 //카톡 프로필을 설정하는 메소드
 -(void)profileImgSet{
@@ -98,8 +97,23 @@
                                                   
                                                   NSData *imageData = [NSData dataWithContentsOfURL:filePath];
                                                   
-                                                  
                                                   self.profileImg.image = [UIImage imageWithData:imageData];
+                                                  self.backImg.image = [UIImage imageWithData:imageData];
+
+                                                  if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+                                                      self.backImg.backgroundColor = [UIColor blackColor];
+                                                      
+                                                      UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
+                                                      UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+                                                      blurEffectView.frame = self.backImg.bounds;
+                                                      blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+                                                      [self.backImg setAlpha:1.9];
+                                                      [self.backImg addSubview:blurEffectView];
+//
+                                                  } else {
+                                                      self.backImg.backgroundColor = [UIColor blackColor];
+                                                  }
+                            
                                                   
                                               }];
     [downloadTask resume];
@@ -136,27 +150,10 @@
     [uploadTask resume];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    MainViewController *mainviewController = segue.destinationViewController;
-    mainviewController.serverToken = self.serverToken;
-//    mainviewController.userID = self.userID;
-
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

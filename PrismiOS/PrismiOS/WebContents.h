@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
-@property const NSString *serverToken;
-@property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
-@property (weak, nonatomic) IBOutlet UILabel *welcomeLB;
+@interface WebContents : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *writeContentBtn;
 @property (weak, nonatomic) IBOutlet UITableView *writeContentsTable;
+@property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
+
+
+
 @end
