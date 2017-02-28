@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 버튼 addTarget
     self.webBtn.tag=0;
     self.mobileBtn.tag=1;
     self.designBtn.tag=2;
@@ -34,6 +36,25 @@
     [self.bigDBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
     [self.etcBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //카카오톡 로그인 구현
     [KOSessionTask meTaskWithCompletionHandler:^(KOUser* result, NSError *error) {
         if (result) {
             // success

@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *designBtn;
 @property (weak, nonatomic) IBOutlet UIButton *bigDBtn;
 @property (weak, nonatomic) IBOutlet UIButton *etcBtn;
+@property (weak, nonatomic) IBOutlet UIScrollView *contentsScrollView;
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface StudyDayTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *dayLB;
+@property (weak, nonatomic) IBOutlet UILabel *timeLB;
 @end
