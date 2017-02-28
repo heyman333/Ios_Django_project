@@ -24,6 +24,10 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='Images/', blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='users_Profile')
     myself = models.TextField(null=True)
+    address = models.CharField(max_length=100, null=True)
+    address_ok = models.BooleanField(default=False)
+    katalk = models.CharField(max_length=100, null=True)
+    katalk_ok = models.BooleanField(default=False)
 
     class Meta:
         ordering = ('id',)

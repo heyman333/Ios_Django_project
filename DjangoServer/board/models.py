@@ -2,7 +2,16 @@ from django.db import models
 
 class Board(models.Model):
 
+    CATEGORY_CHOICES = (
+        ('웹', '웹'),
+        ('모바일', '모바일'),
+        ('빅데이터', '빅데이터'),
+        ('디자인', '디자인'),
+        ('기타', '기타'),
+    )
+
     id = models.AutoField(primary_key=True)
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=10, default=None)
     title = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=10)

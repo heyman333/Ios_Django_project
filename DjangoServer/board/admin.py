@@ -4,7 +4,7 @@ from board.models import Board, Comment
 
 
 class BoardAdmin(admin.ModelAdmin):
-    list_display = ('id', 'owner', 'name', 'title', 'date')
+    list_display = ('id', 'owner', 'category', 'name', 'title', 'date')
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['id', 'owner', 'name', 'date', 'content', 'board_id']
