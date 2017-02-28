@@ -7,7 +7,7 @@ class BoardSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Board
-        fields = ('id', 'url', 'owner', 'category', 'title', 'date', 'name', 'content',
+        fields = ('id', 'owner', 'category', 'title', 'date', 'name', 'content',
                   'mon', 'mon_time',
                   'tue', 'tue_time',
                   'wed', 'wed_time',
