@@ -35,32 +35,16 @@
     [self.designBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
     [self.bigDBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
     [self.etcBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
+
+    DataCenter *dataCenter = [DataCenter sharedInstance];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //카카오톡 로그인 구현
+    //카카오 사용자 정보 얻어오기!
     [KOSessionTask meTaskWithCompletionHandler:^(KOUser* result, NSError *error) {
         if (result) {
             // success
             self.nameLB.text = [NSString stringWithFormat:@"%@님 반갑습니다.",[result propertyForKey:@"nickname"]];
             self.userID = [NSString stringWithFormat:@"%@", result.ID];
-            
+            dataCenter.primary_ID = [NSString stringWithFormat:@"%@", result.ID];
             [self getToken];
             
         } else {
@@ -83,13 +67,12 @@
 
 }
 
-
 -(void)getToken{
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
     [bodyParameters setObject:self.userID forKey:@"username"];
     [bodyParameters setObject:self.userID forKey:@"password"];
     
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/auth/token/"
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/auth/token/"
                                                                                              parameters:bodyParameters
                                                                               constructingBodyWithBlock:nil error:nil];
     
@@ -103,7 +86,7 @@
         }
         else {
             NSLog(@"토큰을 받아왔습니다");
-//            NSLog(@"%@",responseObject);
+            //            NSLog(@"%@",responseObject);
             DataCenter *dataCenter = [DataCenter sharedInstance];
             dataCenter.serverToken= [responseObject objectForKey:@"token"];
         }
@@ -126,6 +109,8 @@
     }];
 }
 
+
+//테마별 게시판 버튼
 -(void)onContentsBtnClicked:(UIButton *)sender{
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
@@ -134,28 +119,28 @@
     switch (sender.tag) {
         //webBtn
         case 0:
-             dataCenter.contentsInfo = @{@"title":@"웹프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/web/"};
+             dataCenter.contentsInfo = @{@"title":@"웹프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/web/"};
             break;
             
         //mobileBtn
         case 1:
             
-            dataCenter.contentsInfo = @{@"title":@"모바일프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/mobile/"};
+            dataCenter.contentsInfo = @{@"title":@"모바일프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/mobile/"};
             break;
         //designBtn
         case 2:
             
-            dataCenter.contentsInfo = @{@"title":@"디자인",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/design/"};
+            dataCenter.contentsInfo = @{@"title":@"디자인",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/design/"};
             break;
         //bigDBtn
         case 3:
             
-            dataCenter.contentsInfo = @{@"title":@"빅 데이터",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/bigdata/"};
+            dataCenter.contentsInfo = @{@"title":@"빅 데이터",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/bigdata/"};
             break;
         //ectBtn
         case 4:
             
-            dataCenter.contentsInfo = @{@"title":@"ETC",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/etc/"};
+            dataCenter.contentsInfo = @{@"title":@"ETC",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/etc/"};
             break;
         default:
             break;

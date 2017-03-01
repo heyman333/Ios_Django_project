@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface DataCenter : NSObject
-@property NSString *serverToken;
-@property NSDictionary *contentsInfo;
-@property NSDictionary *writingInfos;
+@property NSString *serverToken; //민구서버 토큰
+@property NSDictionary *contentsInfo; //
+@property NSDictionary *writingInfos; //
+@property NSString *primary_ID;
+@property NSNumber *board_ID;
 +(instancetype)sharedInstance;
 @end

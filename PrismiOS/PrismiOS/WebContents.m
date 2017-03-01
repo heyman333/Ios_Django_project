@@ -21,6 +21,7 @@
 @property NSString *apiURL;
 @property NSString *titleName;
 @property NSNumber *selectedCell;
+@property NSDictionary *commentsDic;
 @end
 
 @implementation WebContents
@@ -39,6 +40,7 @@
 
     DataCenter *dataCenter = [DataCenter sharedInstance];
     self.serverToken = dataCenter.serverToken;
+    NSLog(@"serverOkten : %@",self.serverToken);
     self.apiURL = [dataCenter.contentsInfo objectForKey:@"apiURL"];
     self.titleName = [dataCenter.contentsInfo objectForKey:@"title"];
     NSLog(@"%@", self.apiURL);
@@ -52,14 +54,6 @@
     
     [self getboardContents];
 }
-//
-//-(void)setContents:(NSNotification *)noti{
-//    NSLog(@"하이!!");
-//    NSLog(@"%@",[noti.userInfo objectForKey:@"title"]);
-//    NSLog(@"%@",[noti.userInfo objectForKey:@"apiURL"]);
-//}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -87,6 +81,7 @@
              NSLog(@"error다 이색기야!: %@", error);
          }];
 }
+
 
 - (IBAction)onBackBtn:(UIBarButtonItem *)sender {
     

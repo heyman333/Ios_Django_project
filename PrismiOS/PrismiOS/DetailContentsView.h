@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *writingContentsTV;
 @property (weak, nonatomic) IBOutlet UILabel *studyManNumLB;
 @property (weak, nonatomic) IBOutlet UITableView *studyTimeTable;
+@property (weak, nonatomic) IBOutlet UITableView *commentTable;
+
 @end
