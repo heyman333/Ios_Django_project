@@ -31,3 +31,12 @@ class Profile(models.Model):
 
     class Meta:
         ordering = ('id',)
+
+class Image(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    image = models.ImageField(upload_to='Images/', blank=True, null=True)
+    owner = models.ForeignKey('auth.User', related_name='users_Image')
+
+    class Meta:
+        ordering = ('id',)
