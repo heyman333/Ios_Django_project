@@ -36,6 +36,7 @@ class ImageViewSet(viewsets.ModelViewSet):
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
+    parser_classes = (MultiPartParser, FormParser,)
 
     def perform_create(self, serializer):
             serializer.save(owner=self.request.user)
