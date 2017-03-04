@@ -33,18 +33,21 @@
     [self getComments];
     
     NSLog(@"%@", self.contentsInfos);
+    dataCenter.primary_ID = [self.contentsInfos objectForKey:@"owner"];
+    
     self.titleLB.text = [self.contentsInfos objectForKey:@"title"];
     self.writerLB.text = [self.contentsInfos objectForKey:@"name"];
     self.writingContentsTV.text = [self.contentsInfos objectForKey:@"content"];
     [self.writingContentsTV setEditable:NO];
     self.studyManNumLB.text = [NSString stringWithFormat:@"%@",[self.contentsInfos objectForKey:@"people_num"]];
     self.board_ID = [self.contentsInfos objectForKey:@"id"];
-    NSArray *dayArr = @[@"mon",@"tue",@"wed",@"thu",@"fri",@"sat",@"sun"];
+    NSArray *dayArr = @[@"mon_time",@"tue_time",@"wed_time",@"thu_time",@"fri_time",@"sat_time",@"sun_time"];
+    NSArray *dayArr2 = @[@"월",@"화",@"수",@"목",@"금",@"토",@"일"];
     
     for (NSInteger i = 0 ; i< dayArr.count ; i++) {
         if ([self.contentsInfos objectForKey:dayArr[i]] != [NSNull null]) {
-            NSString * day = [self.contentsInfos objectForKey:dayArr[i]];
-            NSString * time = [self.contentsInfos objectForKey:[NSString stringWithFormat:@"%@_time", dayArr[i]]];
+            NSString * day = [dayArr2 objectAtIndex:i];
+            NSString * time = [self.contentsInfos objectForKey:[dayArr objectAtIndex:i]];
             
             NSLog(@"%@",time);
             
@@ -70,15 +73,15 @@
                                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                                     NSArray *results = responseObject;
                                                     
-                                            
+                                                    
                                                     for (NSInteger i = 0 ; i<results.count; i++) {
-                                        
+                                                        
                                                         if([[results[i] objectForKey:@"board_id"] isEqual:self.board_ID]){
                                                             [self.mutableComments addObject:results[i]];
                                                         }
-                                                    
+                                                        
                                                     }
-                                                    NSLog(@"%ld", self.mutableComments.count);
+                                                    NSLog(@"%ld", (unsigned long)self.mutableComments.count);
                                                     [self.commentTable reloadData];
                                                 }
                                       //                                                    dispatch_async(dispatch_get_main_queue(), ^{
@@ -89,7 +92,7 @@
                                       
                                       ];
     [dataTask resume];
-        
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -122,8 +125,6 @@
             cell.timeLB.text =
             [[[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"date"] substringToIndex:10];
         }
-        
-        
         return cell;
     }
     
@@ -137,7 +138,7 @@
     else{
         return self.mutableComments.count;
     }
-
+    
 }
 
 - (IBAction)onBackBtn:(UIBarButtonItem *)sender {
@@ -152,6 +153,34 @@
     modalSetting.modalPresentationStyle = UIModalPresentationPopover;
     
     [self presentViewController:modalSetting animated:YES completion:nil];
+}
+
+
+
+- (IBAction)writeComment:(UIButton *)sender {
+    
+    DataCenter *dataCenter = [DataCenter sharedInstance];
+
+    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
+    
+    [bodyParameters setObject:@"한영수333" forKey:@"name"];
+    [bodyParameters setObject:@"하이루" forKey:@"content"];
+    [bodyParameters setObject:[NSNumber numberWithInt:11] forKey:@"board_id"];
+    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/";
+    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",dataCenter.serverToken];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
+    
+    //    NSURLSessionUploadTask *uploadTask;
+    
+    [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success!");
+        [self getComments];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error다 이색기야!: %@", error);
+    }];
 }
 
 

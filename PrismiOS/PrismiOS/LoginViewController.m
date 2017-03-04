@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "ProfileSettingController.h"
+#import "AppMainViewController.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 
 @interface LoginViewController ()
@@ -55,9 +56,17 @@
                     NSNumber *userId = result.ID;
                     self.userInfos = @{@"nickname":nickname, @"profile_image":profile_image,@"userID":userId};
                     
-                    [self performSegueWithIdentifier:@"profilset" sender:self];
-//                    [self gotoProfileSetPage];
+                    AppMainViewController *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"main"];
                     
+                    UIAlertController *gotoMainAlert = [UIAlertController alertControllerWithTitle:@"로그인" message:@"처음 접속하는 분이라면 개인정보를 설정해주세요" preferredStyle: UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction *action = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [self.navigationController pushViewController:mainVC animated:YES];
+                    }];
+                    
+                    [gotoMainAlert addAction:action];
+                    [self presentViewController:gotoMainAlert animated:YES completion:nil];
+
                 } else {
                     NSLog(@"사용자 정보를 얻어오지 못했습니다!");
                 }
@@ -67,13 +76,6 @@
             NSLog(@"login failed.");
         }
     }];
-    
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender{
-
-    ProfileSettingController *controller = segue.destinationViewController;
-    controller.userInfos = self.userInfos;
     
 }
 

@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *comment;
 @property (weak, nonatomic) IBOutlet UILabel *timeLB;
 
+
+
 @end

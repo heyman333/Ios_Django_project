@@ -44,7 +44,12 @@
             // success
             self.nameLB.text = [NSString stringWithFormat:@"%@님 반갑습니다.",[result propertyForKey:@"nickname"]];
             self.userID = [NSString stringWithFormat:@"%@", result.ID];
-            dataCenter.primary_ID = [NSString stringWithFormat:@"%@", result.ID];
+            dataCenter.primary_ID = [NSString stringWithFormat:@"%@", self.userID];
+            NSString *nickname = [result propertyForKey:@"nickname"];
+            NSString *profile_image = [result propertyForKey:@"profile_image"];
+            dataCenter.userInfos = @{@"nickname":nickname, @"profile_image":profile_image,@"userID":self.userID};
+            
+            [self userRegisterCheck];
             [self getToken];
             
         } else {
@@ -149,5 +154,84 @@
     [self.navigationController pushViewController:VC animated:YES];
     
 }
+
+
+
+
+//등록된 유저인지 찾아내는 메소드
+-(void)userRegisterCheck{
+    
+    __block NSArray *results;
+    __block BOOL isregisterd;
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/list/"];
+    NSURL *url = [NSURL URLWithString:destinationURLString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request
+                                                completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                                    
+                                                    results = responseObject;
+                                                    //                                                    NSLog(@"results : %@", results);
+                                                    //등록된 유저를 찾는 반복문
+                                                    for (NSInteger i = 0; i<results.count; i++) {
+                                                        
+                                                        if([[results[i] objectForKey:@"username"] isEqualToString:self.userID]){
+                                                            isregisterd = YES;
+                                                        }
+                                                        
+                                                        if (!isregisterd) {
+                                                            [self userRegister];
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                      //                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                      //                                                        [self.tableView reloadData];
+                                      //                                                    });
+                                      
+                                      //
+                                      
+                                      ];
+    [dataTask resume];
+    
+}
+
+
+
+//카카오 고유 아이디(비밀번호와 동일)로 서버에 등록하는 메소드!
+- (void)userRegister {
+    
+    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
+    
+    [bodyParameters setObject:self.userID forKey:@"username"];
+    [bodyParameters setObject:self.userID forKey:@"password"];
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/register/"
+                                                                                             parameters:bodyParameters
+                                                                              constructingBodyWithBlock:nil error:nil];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    NSURLSessionUploadTask *uploadTask;
+    uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"\n\n userRegister task error = %@\n\n", error);
+        }
+        else {
+            NSLog(@"등록 성공!");
+            
+        }
+    }];
+    
+    [uploadTask resume];
+}
+
 
 @end

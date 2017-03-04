@@ -14,5 +14,7 @@
 @property NSDictionary *writingInfos; //
 @property NSString *primary_ID;
 @property NSNumber *board_ID;
+@property NSDictionary *userInfos;
+
 +(instancetype)sharedInstance;
 @end

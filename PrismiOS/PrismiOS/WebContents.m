@@ -45,12 +45,7 @@
     self.titleName = [dataCenter.contentsInfo objectForKey:@"title"];
     NSLog(@"%@", self.apiURL);
     NSLog(@"%@", self.titleName);
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setContents:) name:@"contentsNoti" object:nil];
-    
     self.naviTitle.title = self.titleName;
-    
-    
     
     [self getboardContents];
 }
