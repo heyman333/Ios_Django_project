@@ -35,7 +35,10 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ('url', 'owner', 'id', 'name', 'interest', 'image', 'myself', 'address', 'address_ok', 'katalk', 'katalk_ok')
+        fields = ('url', 'owner', 'id', 'name',
+                  'interest', 'front', 'back', 'application', 'game', 'bigdata', 'ios',
+                  'android', 'machine', 'uiux', 'graphic', 'planning',
+                  'image', 'myself', 'address', 'address_ok', 'katalk', 'katalk_ok')
 
 class ImageSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
