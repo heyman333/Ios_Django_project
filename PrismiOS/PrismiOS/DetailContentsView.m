@@ -37,8 +37,7 @@
     
     self.titleLB.text = [self.contentsInfos objectForKey:@"title"];
     self.writerLB.text = [self.contentsInfos objectForKey:@"name"];
-    self.writingContentsTV.text = [self.contentsInfos objectForKey:@"content"];
-    [self.writingContentsTV setEditable:NO];
+    self.contentLB.text = [self.contentsInfos objectForKey:@"content"];
     self.studyManNumLB.text = [NSString stringWithFormat:@"%@",[self.contentsInfos objectForKey:@"people_num"]];
     self.board_ID = [self.contentsInfos objectForKey:@"id"];
     NSArray *dayArr = @[@"mon_time",@"tue_time",@"wed_time",@"thu_time",@"fri_time",@"sat_time",@"sun_time"];
