@@ -120,7 +120,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    NSDictionary *dicTemp = [self.boardArr objectAtIndex:indexPath.row];
+    
+    NSInteger boardNum = self.boardArr.count-1-indexPath.row;
+
+
+    NSDictionary *dicTemp = [self.boardArr objectAtIndex:boardNum];
 
     BoardContentsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardContentsCell"];
     
@@ -131,7 +135,7 @@
 
     cell.writerLB.text = [dicTemp objectForKey:@"name"];
     cell.writingTitleLB.text = [dicTemp objectForKey:@"title"];
-    cell.tagLB.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:indexPath.row]];
+    cell.tagLB.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:boardNum]];
 
     return cell;
     
@@ -140,9 +144,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    
+    NSInteger boardNum = self.boardArr.count-1-indexPath.row;
+    
     DataCenter *dataCenter = [DataCenter sharedInstance];
-    dataCenter.writingInfos = [self.boardArr objectAtIndex:indexPath.row];
-    NSLog(@"%@", [NSNumber numberWithInteger:indexPath.row]);
+    dataCenter.writingInfos = [self.boardArr objectAtIndex:boardNum];
+    NSLog(@"%@", [NSNumber numberWithInteger:boardNum]);
 
 }
 
