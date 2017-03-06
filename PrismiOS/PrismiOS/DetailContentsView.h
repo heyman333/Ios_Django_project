@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *studyTimeTable;
 @property (weak, nonatomic) IBOutlet UITableView *commentTable;
 @property (weak, nonatomic) IBOutlet UILabel *locationLB;
+@property (weak, nonatomic) IBOutlet UITextView *commentTF;
 
 @end

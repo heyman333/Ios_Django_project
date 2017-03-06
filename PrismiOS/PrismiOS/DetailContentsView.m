@@ -21,6 +21,8 @@
 @property NSMutableArray *mutableComments;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsHeightConst;
 
 @end
 @implementation DetailContentsView
@@ -33,7 +35,7 @@
     self.mutableDays = [[NSMutableArray alloc] init];
     self.mutableTimes = [[NSMutableArray alloc] init];
     self.mutableComments = [[NSMutableArray alloc] init];
-//    [self getComments];
+    [self getComments];
     
     NSLog(@"%@", self.contentsInfos);
     dataCenter.primary_ID = [self.contentsInfos objectForKey:@"owner"];
@@ -92,6 +94,9 @@
                                                     }
                                                     NSLog(@"%ld", (unsigned long)self.mutableComments.count);
                                                     [self.commentTable reloadData];
+                                                    [self.commentHeightConstraint setConstant:self.mutableComments.count * 87.0];
+                                                    
+                                                    [self.contentsHeightConst setConstant:900 + self.mutableComments.count * 87.0];
                                                 }
                                       //                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                       //                                                        [self.tableView reloadData];
@@ -173,9 +178,9 @@
 
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
     
-    [bodyParameters setObject:@"한영수333" forKey:@"name"];
-    [bodyParameters setObject:@"하이루" forKey:@"content"];
-    [bodyParameters setObject:[NSNumber numberWithInt:11] forKey:@"board_id"];
+    [bodyParameters setObject:[dataCenter.userInfos objectForKey:@"nickname"] forKey:@"name"];
+    [bodyParameters setObject:self.commentTF.text forKey:@"content"];
+    [bodyParameters setObject:[self.contentsInfos objectForKey:@"id"] forKey:@"board_id"];
     NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/";
     NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",dataCenter.serverToken];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -187,6 +192,7 @@
     
     [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success!");
+        [self.mutableComments removeAllObjects];
         [self getComments];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error다 이색기야!: %@", error);
