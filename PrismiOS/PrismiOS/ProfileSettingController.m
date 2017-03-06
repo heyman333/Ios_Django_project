@@ -438,6 +438,10 @@
     }
 }
 
+- (IBAction)onCancelBtn:(UIButton *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
 

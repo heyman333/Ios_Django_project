@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WritingContentsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *monTimeTF;
 
 
 

@@ -18,13 +18,14 @@
  */
 - (void)drawRect:(CGRect)rect {
     DataCenter *dataCenter = [DataCenter sharedInstance];
-    NSLog(@"%@", [dataCenter.userInfos objectForKey:@"nickname"]);
+    NSString *reName = [NSString stringWithFormat:@" %@", [dataCenter.writingInfos objectForKey:@"name"]];
 
-    
-    [[self layer] setMasksToBounds:YES];
-    [self.layer setCornerRadius:10.0f];
-    [self.layer setBorderColor:[UIColor grayColor].CGColor];
-    [self.layer setBorderWidth:1.0];
+    NSString *name = reName;
+    [self setTitle:name forState:UIControlStateNormal];
+//    [[self layer] setMasksToBounds:YES];
+//    [self.layer setCornerRadius:20.0f];
+//    [self.layer setBorderColor:[UIColor grayColor].CGColor];
+//    [self.layer setBorderWidth:1.0];
 
 }
 

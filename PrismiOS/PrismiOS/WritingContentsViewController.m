@@ -11,10 +11,11 @@
 #import <AFNetworking.h>
 
 @interface WritingContentsViewController ()
-<UIPickerViewDelegate,UIPickerViewDataSource>
+<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
 
 @property NSArray *arrs;
 @property NSString *category;
+@property UIDatePicker *timePicker;
 
 @end
 
@@ -23,7 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.arrs = @[@"웹프로그래밍",@"모바일 프로그래밍",@"디자인",@"빅데이터",@"기타"];
+    
+    
+    self.timePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
+    self.timePicker.datePickerMode = UIDatePickerModeTime;
+    [self.timePicker setMinuteInterval:30];
+    
+    [self.timePicker addTarget:self action:@selector(timeChanged:)forControlEvents:UIControlEventValueChanged];
+    
+    self.monTimeTF.inputView = self.timePicker;
+    
+    
+    
     self.category = @"웹";
+//    self.monTimeTF.inputView =
    
 }
 
@@ -75,6 +89,8 @@
     }
 }
 
+
+
 - (IBAction)writeDoneClicked:(UIBarButtonItem *)sender {
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
@@ -124,7 +140,15 @@
 }
 
 
-
+-(void)timeChanged:(UIDatePicker *)sender{
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"h:mm a"];
+    
+    self.monTimeTF.text = [outputFormatter stringFromDate:self.timePicker.date];
+    [self.monTimeTF resignFirstResponder];
+    
+}
 
 
 
