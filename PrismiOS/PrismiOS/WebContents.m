@@ -142,16 +142,30 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    
+    DetailContentsView *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailContentsView"];
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
     
     NSInteger boardNum = self.boardArr.count-1-indexPath.row;
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
     dataCenter.writingInfos = [self.boardArr objectAtIndex:boardNum];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
     NSLog(@"%@", [NSNumber numberWithInteger:boardNum]);
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self getboardContents];
+    
+    
+}
 
 @end

@@ -33,7 +33,7 @@
     self.mutableDays = [[NSMutableArray alloc] init];
     self.mutableTimes = [[NSMutableArray alloc] init];
     self.mutableComments = [[NSMutableArray alloc] init];
-    [self getComments];
+//    [self getComments];
     
     NSLog(@"%@", self.contentsInfos);
     dataCenter.primary_ID = [self.contentsInfos objectForKey:@"owner"];
@@ -52,16 +52,18 @@
             NSString * time = [self.contentsInfos objectForKey:[dayArr objectAtIndex:i]];
             
             NSLog(@"%@",time);
-            
             [self.mutableDays addObject:day];
             [self.mutableTimes addObject:time];
             
         }
     }
-    
-    
-    
-    [self.heightConstraint setConstant:self.mutableDays.count*44.0];
+
+    if(self.mutableDays.count > 0 ){
+        [self.heightConstraint setConstant:(self.mutableDays.count)*44.0];
+    }
+    else{
+        [self.heightConstraint setConstant:0];
+    }
     
 }
 
@@ -140,6 +142,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (tableView == self.studyTimeTable) {
+    
         return self.mutableDays.count;
     }
     else{
@@ -189,7 +192,6 @@
         NSLog(@"error다 이색기야!: %@", error);
     }];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
