@@ -101,12 +101,12 @@
     [bodyParameters setObject:[dataCenter.userInfos objectForKey:@"nickname"] forKey:@"name"];
     [bodyParameters setObject:@"나랑 공부할사람!" forKey:@"content"];
     [bodyParameters setObject:@"11:00~13:00" forKey:@"mon_time"];
-    [bodyParameters setObject:@"11:00~13:00" forKey:@"tue_time"];
-    [bodyParameters setObject:@"11:00~13:00" forKey:@"wed_time"];
-    [bodyParameters setObject:@"11:00~13:00" forKey:@"thu_time"];
-    [bodyParameters setObject:@"11:00~13:00" forKey:@"fri_time"];
-    [bodyParameters setObject:@"11:00~13:00" forKey:@"sat_time"];
-    [bodyParameters setObject:@"11:00~13:00" forKey:@"sun_time"];
+    [bodyParameters setObject:@"10:00~13:00" forKey:@"tue_time"];
+    [bodyParameters setObject:@"09:00~13:00" forKey:@"wed_time"];
+//    [bodyParameters setObject:@"11:00~13:00" forKey:@"thu_time"];
+//    [bodyParameters setObject:@"11:00~13:00" forKey:@"fri_time"];
+//    [bodyParameters setObject:@"11:00~13:00" forKey:@"sat_time"];
+//    [bodyParameters setObject:@"11:00~13:00" forKey:@"sun_time"];
     [bodyParameters setObject:[NSNumber numberWithInt:10] forKey:@"people_num"];
     [bodyParameters setObject:@"서울" forKey:@"location"];
     [bodyParameters setObject:self.category forKey:@"category"];

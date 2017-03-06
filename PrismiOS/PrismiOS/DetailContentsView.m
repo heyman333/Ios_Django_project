@@ -21,6 +21,8 @@
 @property NSMutableArray *mutableComments;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsHeightConst;
 
 @end
 @implementation DetailContentsView
@@ -52,16 +54,18 @@
             NSString * time = [self.contentsInfos objectForKey:[dayArr objectAtIndex:i]];
             
             NSLog(@"%@",time);
-            
             [self.mutableDays addObject:day];
             [self.mutableTimes addObject:time];
             
         }
     }
-    
-    
-    
-    [self.heightConstraint setConstant:self.mutableDays.count*44.0];
+
+    if(self.mutableDays.count > 0 ){
+        [self.heightConstraint setConstant:(self.mutableDays.count)*44.0];
+    }
+    else{
+        [self.heightConstraint setConstant:0];
+    }
     
 }
 
@@ -90,6 +94,9 @@
                                                     }
                                                     NSLog(@"%ld", (unsigned long)self.mutableComments.count);
                                                     [self.commentTable reloadData];
+                                                    [self.commentHeightConstraint setConstant:self.mutableComments.count * 87.0];
+                                                    
+                                                    [self.contentsHeightConst setConstant:900 + self.mutableComments.count * 87.0];
                                                 }
                                       //                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                       //                                                        [self.tableView reloadData];
@@ -140,6 +147,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (tableView == self.studyTimeTable) {
+    
         return self.mutableDays.count;
     }
     else{
@@ -170,9 +178,9 @@
 
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
     
-    [bodyParameters setObject:@"한영수333" forKey:@"name"];
-    [bodyParameters setObject:@"하이루" forKey:@"content"];
-    [bodyParameters setObject:[NSNumber numberWithInt:11] forKey:@"board_id"];
+    [bodyParameters setObject:[dataCenter.userInfos objectForKey:@"nickname"] forKey:@"name"];
+    [bodyParameters setObject:self.commentTF.text forKey:@"content"];
+    [bodyParameters setObject:[self.contentsInfos objectForKey:@"id"] forKey:@"board_id"];
     NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/";
     NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",dataCenter.serverToken];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -184,12 +192,12 @@
     
     [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success!");
+        [self.mutableComments removeAllObjects];
         [self getComments];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error다 이색기야!: %@", error);
     }];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
