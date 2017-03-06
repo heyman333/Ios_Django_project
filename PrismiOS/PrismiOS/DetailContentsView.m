@@ -19,6 +19,9 @@
 @property NSMutableArray *mutableTimes;
 @property NSNumber *board_ID;
 @property NSMutableArray *mutableComments;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+
+
 @end
 @implementation DetailContentsView
 
@@ -36,7 +39,7 @@
     dataCenter.primary_ID = [self.contentsInfos objectForKey:@"owner"];
     
     self.titleLB.text = [self.contentsInfos objectForKey:@"title"];
-    self.writerLB.text = [self.contentsInfos objectForKey:@"name"];
+    self.locationLB.text = [self.contentsInfos objectForKey:@"location"];
     self.contentLB.text = [self.contentsInfos objectForKey:@"content"];
     self.studyManNumLB.text = [NSString stringWithFormat:@"%@",[self.contentsInfos objectForKey:@"people_num"]];
     self.board_ID = [self.contentsInfos objectForKey:@"id"];
@@ -55,6 +58,11 @@
             
         }
     }
+    
+    
+    
+    [self.heightConstraint setConstant:self.mutableDays.count*44.0];
+    
 }
 
 //댓글 가져오기

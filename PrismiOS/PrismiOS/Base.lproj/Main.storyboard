@@ -704,7 +704,7 @@
                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXb-48-r1a">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXb-48-r1a">
                                                                 <rect key="frame" x="96" y="0.0" width="96" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1075,12 +1075,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iDw-91-oTU">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iDw-91-oTU">
                                                         <rect key="frame" x="0.0" y="220" width="288" height="70"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" priority="260" constant="70" id="Fnj-l1-7Z6"/>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="Lf5-Er-Ego"/>
+                                                            <constraint firstAttribute="height" constant="70" id="Fnj-l1-7Z6"/>
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudyDayCell" id="3qS-Wp-g5e" customClass="StudyDayTableViewCell">
@@ -1251,6 +1250,8 @@
                     <connections>
                         <outlet property="commentTable" destination="hLM-M2-PXP" id="GD2-E1-Nc5"/>
                         <outlet property="contentLB" destination="rIA-EX-U1W" id="Lny-ey-lJs"/>
+                        <outlet property="heightConstraint" destination="Fnj-l1-7Z6" id="IMo-n2-mbM"/>
+                        <outlet property="locationLB" destination="FrM-FB-Mbc" id="q3e-jJ-cnz"/>
                         <outlet property="studyManNumLB" destination="FIa-FO-gEs" id="Dg1-dU-AZf"/>
                         <outlet property="studyTimeTable" destination="iDw-91-oTU" id="1Va-mb-wHa"/>
                         <outlet property="titleLB" destination="Wrx-3b-Qwe" id="b7f-M6-VB7"/>
@@ -1258,7 +1259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4en-t2-phN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4991" y="-6204"/>
+            <point key="canvasLocation" x="-5312" y="-6219"/>
         </scene>
         <!--User Info View Controller-->
         <scene sceneID="PCt-h1-5sm">
