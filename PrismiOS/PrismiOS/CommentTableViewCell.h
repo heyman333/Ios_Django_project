@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *writerLB;
 @property (weak, nonatomic) IBOutlet UILabel *comment;
 @property (weak, nonatomic) IBOutlet UILabel *timeLB;
+@property (weak, nonatomic) IBOutlet UILabel *ownerHiddenLB;
 
 
 
