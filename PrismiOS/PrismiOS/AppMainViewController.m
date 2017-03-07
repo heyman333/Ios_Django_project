@@ -35,7 +35,7 @@
     [self.designBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
     [self.bigDBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
     [self.etcBtn addTarget:self action:@selector(onContentsBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
-
+    
     DataCenter *dataCenter = [DataCenter sharedInstance];
     
     //카카오 사용자 정보 얻어오기!
@@ -50,7 +50,6 @@
             dataCenter.userInfos = @{@"nickname":nickname, @"profile_image":profile_image,@"userID":self.userID};
             
             [self userRegisterCheck];
-            [self getToken];
             
         } else {
             NSLog(@"사용자 정보를 얻어오지 못했습니다!");
@@ -69,7 +68,7 @@
             [self presentViewController:alertController animated:YES completion:nil];
         }
     }];
-
+    
 }
 
 -(void)getToken{
@@ -106,7 +105,7 @@
         if (success) {
             NSLog(@"로그아웃 했습니다.");
             [self.navigationController popToRootViewControllerAnimated:YES];
-        
+            
         } else {
             // failed
             NSLog(@"failed to logout.");
@@ -120,29 +119,29 @@
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
     WebContents *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebContents"];
-
+    
     switch (sender.tag) {
-        //webBtn
+            //webBtn
         case 0:
-             dataCenter.contentsInfo = @{@"title":@"웹프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/web/"};
+            dataCenter.contentsInfo = @{@"title":@"웹프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/web/"};
             break;
             
-        //mobileBtn
+            //mobileBtn
         case 1:
             
             dataCenter.contentsInfo = @{@"title":@"모바일프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/mobile/"};
             break;
-        //designBtn
+            //designBtn
         case 2:
             
             dataCenter.contentsInfo = @{@"title":@"디자인",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/design/"};
             break;
-        //bigDBtn
+            //bigDBtn
         case 3:
             
             dataCenter.contentsInfo = @{@"title":@"빅 데이터",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/bigdata/"};
             break;
-        //ectBtn
+            //ectBtn
         case 4:
             
             dataCenter.contentsInfo = @{@"title":@"ETC",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/etc/"};
@@ -150,7 +149,7 @@
         default:
             break;
     }
-
+    
     [self.navigationController pushViewController:VC animated:YES];
     
 }
@@ -161,12 +160,14 @@
 //등록된 유저인지 찾아내는 메소드
 -(void)userRegisterCheck{
     
+    NSLog(@"등록된 유저인지 찾자!");
     __block NSArray *results;
     __block BOOL isregisterd;
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/list/"];
+    NSString *destinationURLString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/list/";
+    
     NSURL *url = [NSURL URLWithString:destinationURLString];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -174,23 +175,29 @@
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request
                                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                                                    
+                                                    NSLog(@"%@",responseObject);
                                                     results = responseObject;
+
                                                     //                                                    NSLog(@"results : %@", results);
                                                     //등록된 유저를 찾는 반복문
                                                     for (NSInteger i = 0; i<results.count; i++) {
                                                         
                                                         if([[results[i] objectForKey:@"username"] isEqualToString:self.userID]){
+                                                            NSLog(@"등록된 유저다!");
                                                             isregisterd = YES;
                                                         }
-                                                        
+                                                    }
+                                                    
                                                         if (!isregisterd) {
                                                             [self userRegister];
+                                                            NSLog(@"유저를 등록합니다");
+                                                        }
+                                                        else{
+                                                            NSLog(@"이미 등록된 유저입니다");
+                                                            [self getToken];
                                                         }
                                                         
                                                     }
-                                                    
-                                                }
                                       //                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                       //                                                        [self.tableView reloadData];
                                       //                                                    });
@@ -212,7 +219,7 @@
     [bodyParameters setObject:self.userID forKey:@"username"];
     [bodyParameters setObject:self.userID forKey:@"password"];
     
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/users/register/"
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/register/"
                                                                                              parameters:bodyParameters
                                                                               constructingBodyWithBlock:nil error:nil];
     

@@ -19,8 +19,8 @@
 @property NSMutableArray *mutableTimes;
 @property NSNumber *board_ID;
 @property NSMutableArray *mutableComments;
+@property CGFloat finalConst;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsHeightConst;
 
@@ -62,6 +62,8 @@
 
     if(self.mutableDays.count > 0 ){
         [self.heightConstraint setConstant:(self.mutableDays.count)*44.0];
+        [self.contentsHeightConst setConstant:600 +(self.mutableDays.count)*44.0];
+        self.finalConst = (600 +(self.mutableDays.count)*44.0);
     }
     else{
         [self.heightConstraint setConstant:0];
@@ -95,8 +97,7 @@
                                                     NSLog(@"%ld", (unsigned long)self.mutableComments.count);
                                                     [self.commentTable reloadData];
                                                     [self.commentHeightConstraint setConstant:self.mutableComments.count * 87.0];
-                                                    
-                                                    [self.contentsHeightConst setConstant:900 + self.mutableComments.count * 87.0];
+                                                    [self.contentsHeightConst setConstant:self.finalConst + self.mutableComments.count * 87.0];
                                                 }
                                       //                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                       //                                                        [self.tableView reloadData];
@@ -187,9 +188,7 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
-    
-    //    NSURLSessionUploadTask *uploadTask;
-    
+
     [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success!");
         [self.mutableComments removeAllObjects];

@@ -55,7 +55,7 @@
     [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
     
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"success!");
+        NSLog(@"success!!@!");
         
         self.resultArr = responseObject;
         
