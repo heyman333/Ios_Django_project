@@ -7,15 +7,15 @@ class BoardSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Board
-        fields = ('id', 'url', 'owner', 'category', 'title', 'date', 'name', 'content',
-                  'mon', 'mon_time',
-                  'tue', 'tue_time',
-                  'wed', 'wed_time',
-                  'thu', 'thu_time',
-                  'fri', 'fri_time',
-                  'sat', 'sat_time',
-                  'sun', 'sun_time',
-                  'people_num')
+        fields = ('id', 'owner', 'category', 'title', 'date', 'name', 'content',
+                  'mon_time',
+                  'tue_time',
+                  'wed_time',
+                  'thu_time',
+                  'fri_time',
+                  'sat_time',
+                  'sun_time',
+                  'people_num', 'location')
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

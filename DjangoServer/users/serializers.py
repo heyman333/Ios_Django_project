@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from rest_framework import fields
 from rest_framework import serializers
 
-from users.models import Profile, INTEREST_CHOICES
+from users.models import Profile, INTEREST_CHOICES, Image
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -33,4 +35,14 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ('url', 'owner', 'id', 'name', 'interest', 'image', 'myself', 'address', 'address_ok', 'katalk', 'katalk_ok')
+        fields = ('url', 'owner', 'id', 'name',
+                  'interest', 'front', 'back', 'application', 'game', 'bigdata', 'ios',
+                  'android', 'machine', 'uiux', 'graphic', 'planning',
+                  'image', 'myself', 'address', 'address_ok', 'katalk', 'katalk_ok')
+
+class ImageSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = Image
+        fields = ('id', 'image', 'owner')

@@ -8,6 +8,7 @@ from users.views import UserCreateAPIView
 router = DefaultRouter()
 router.register(r'list', views.UserViewSet)
 router.register(r'profiles', views.ProfileViewSet)
+router.register(r'images', views.ImageViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
