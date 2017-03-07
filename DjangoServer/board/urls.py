@@ -10,7 +10,7 @@ router.register(r'mobile', views.MobileViewSet, base_name='mobile')
 router.register(r'bigdata', views.BigDataViewSet, base_name='bigdata')
 router.register(r'design', views.DesignViewSet, base_name='design')
 router.register(r'etc', views.ETCViewSet)
-router.register(r'comments', views.CommentViewset)
+router.register(r'comments', views.CommentViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

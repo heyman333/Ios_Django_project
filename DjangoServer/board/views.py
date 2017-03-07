@@ -1,6 +1,7 @@
 from rest_framework import permissions
 from rest_framework import viewsets
 from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import AllowAny
 
 from board.models import Board, Comment
 from board.permission import IsOwnerOrReadOnly
@@ -60,11 +61,11 @@ class ETCViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-class CommentViewset(viewsets.ModelViewSet):
+class CommentViewSet(viewsets.ModelViewSet):
 
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
+    permission_classes = [AllowAny]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

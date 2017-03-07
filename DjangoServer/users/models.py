@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from multiselectfield import MultiSelectField
 
@@ -21,6 +23,17 @@ class Profile(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=10)
     interest = MultiSelectField(choices = INTEREST_CHOICES, max_length=225, null=True, blank=True)
+    front = models.BooleanField(default=False)
+    back = models.BooleanField(default=False)
+    application = models.BooleanField(default=False)
+    game = models.BooleanField(default=False)
+    bigdata = models.BooleanField(default=False)
+    ios = models.BooleanField(default=False)
+    android = models.BooleanField(default=False)
+    machine = models.BooleanField(default=False)
+    uiux = models.BooleanField(default=False)
+    graphic = models.BooleanField(default=False)
+    planning = models.BooleanField(default=False)
     image = models.ImageField(upload_to='Images/', blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='users_Profile')
     myself = models.TextField(null=True)
@@ -28,6 +41,15 @@ class Profile(models.Model):
     address_ok = models.BooleanField(default=False)
     katalk = models.CharField(max_length=100, null=True)
     katalk_ok = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ('id',)
+
+class Image(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    image = models.ImageField(upload_to='Images/', blank=True, null=True)
+    owner = models.ForeignKey('auth.User', related_name='users_Image')
 
     class Meta:
         ordering = ('id',)
