@@ -209,6 +209,8 @@
 		6F9ED83C1E5850A800C4BE90 /* PrismiOS */ = {
 			isa = PBXGroup;
 			children = (
+				6FCB8D0B1E6ECE0700019F47 /* ShowUserInfo */,
+				6F0557FB1E5FD7CA0092B82B /* AppDelegate */,
 				6FF17E151E6B112500C69E16 /* customBtn */,
 				6F38DBCC1E6173280051B22C /* DataCenter */,
 				6FF898BC1E68671D00DB28B6 /* WritingContents */,
@@ -222,10 +224,7 @@
 				6F9ED8541E5850C000C4BE90 /* StoryBoard */,
 				6F9ED8491E5850A800C4BE90 /* Assets.xcassets */,
 				6F9ED84E1E5850A800C4BE90 /* Info.plist */,
-				6F0557FB1E5FD7CA0092B82B /* AppDelegate */,
 				6F9ED83D1E5850A800C4BE90 /* Supporting Files */,
-				6FE8B6E11E6472BB007647A4 /* UserInfoViewController.h */,
-				6FE8B6E21E6472BB007647A4 /* UserInfoViewController.m */,
 			);
 			path = PrismiOS;
 			sourceTree = "<group>";
@@ -268,6 +267,15 @@
 				6F38DBBD1E6168F90051B22C /* Back2.png */,
 			);
 			name = Imgs;
+			sourceTree = "<group>";
+		};
+		6FCB8D0B1E6ECE0700019F47 /* ShowUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6FE8B6E11E6472BB007647A4 /* UserInfoViewController.h */,
+				6FE8B6E21E6472BB007647A4 /* UserInfoViewController.m */,
+			);
+			name = ShowUserInfo;
 			sourceTree = "<group>";
 		};
 		6FF17E151E6B112500C69E16 /* customBtn */ = {

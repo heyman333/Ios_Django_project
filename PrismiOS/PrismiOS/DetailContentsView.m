@@ -20,6 +20,7 @@
 @property NSNumber *board_ID;
 @property NSMutableArray *mutableComments;
 @property CGFloat finalConst;
+@property NSString *primary_ID;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsHeightConst;
@@ -35,6 +36,8 @@
     self.mutableDays = [[NSMutableArray alloc] init];
     self.mutableTimes = [[NSMutableArray alloc] init];
     self.mutableComments = [[NSMutableArray alloc] init];
+    self.primary_ID = dataCenter.primary_ID;
+    
     [self getComments];
     
     NSLog(@"%@", self.contentsInfos);
@@ -139,6 +142,7 @@
             cell.comment.text = [[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"content"];
             cell.timeLB.text =
             [[[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"date"] substringToIndex:10];
+            cell.ownerHiddenLB = [[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"owner"];
         }
         return cell;
     }
@@ -164,6 +168,8 @@
 }
 - (IBAction)popupProfile:(id)sender {
     
+    DataCenter *dataCenter = [DataCenter sharedInstance];
+    dataCenter.primary_ID = self.primary_ID;
     UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
     
     modalSetting.modalPresentationStyle = UIModalPresentationPopover;
@@ -197,6 +203,27 @@
         NSLog(@"error다 이색기야!: %@", error);
     }];
 }
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+    DataCenter *dataCenter = [DataCenter sharedInstance];
+    
+    NSLog(@"%ld" , indexPath.row);
+    dataCenter.primary_ID = [[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"owner"];
+
+    UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
+    
+    modalSetting.modalPresentationStyle = UIModalPresentationPopover;
+    
+    [self presentViewController:modalSetting animated:YES completion:nil];
+    
+    
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

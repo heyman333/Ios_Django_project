@@ -305,11 +305,10 @@
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3R4-s4-x87">
                                                         <rect key="frame" x="0.0" y="750" width="335" height="200"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.94275934659885408" green="1" blue="0.83483354993481951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="MIo-Qr-3kU"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -418,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOW-k3-G6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4796" y="-3682"/>
+            <point key="canvasLocation" x="-4782" y="-3766"/>
         </scene>
         <!--Web Contents-->
         <scene sceneID="zzq-jx-B4e">
@@ -449,7 +448,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성자" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxE-Ic-DmK">
                                                             <rect key="frame" x="1" y="23" width="42" height="20"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="textColor" red="0.85696951608477467" green="1" blue="0.58768933122637912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="1" green="0.98618154724554985" blue="0.50412729081717367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag, Tag, Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fo-k1-z8p">
@@ -459,13 +458,15 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글제목" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-lA-QGz">
-                                                            <rect key="frame" x="1" y="89" width="45" height="21"/>
+                                                            <rect key="frame" x="1" y="89" width="45.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                                            <color key="textColor" red="1" green="0.91576549813673658" blue="0.46103559131718252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="1" green="0.43213487223738867" blue="0.48453885353093096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" red="1" green="0.90914492403705716" blue="0.81399760849369773" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <size key="shadowOffset" width="1" height="1"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.38326660670528195" green="0.55471103516726494" blue="0.67559018342391308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.58149566209653747" green="0.67559018342391308" blue="0.62357082798570695" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="dxE-Ic-DmK" firstAttribute="top" secondItem="dLB-OU-d8L" secondAttribute="top" constant="23" id="7uH-F5-3xh"/>
                                                         <constraint firstItem="dxE-Ic-DmK" firstAttribute="leading" secondItem="dLB-OU-d8L" secondAttribute="leading" constant="1" id="Glv-Ge-fc3"/>
@@ -1298,6 +1299,12 @@
                                                                             <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hidden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmR-42-oqv">
+                                                                            <rect key="frame" x="144" y="5" width="53" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottomMargin" secondItem="qUG-2Z-4HB" secondAttribute="bottom" constant="14" id="4v2-7v-Q8v"/>
@@ -1305,13 +1312,16 @@
                                                                         <constraint firstItem="gdZ-nM-eV9" firstAttribute="leading" secondItem="cGO-N7-Rno" secondAttribute="leadingMargin" constant="9" id="Poa-Si-1BD"/>
                                                                         <constraint firstItem="qUG-2Z-4HB" firstAttribute="top" secondItem="cGO-N7-Rno" secondAttribute="topMargin" constant="32" id="Qa6-ax-LDp"/>
                                                                         <constraint firstItem="qUG-2Z-4HB" firstAttribute="leading" secondItem="cGO-N7-Rno" secondAttribute="leadingMargin" constant="9" id="bE0-wd-aFv"/>
+                                                                        <constraint firstItem="lmR-42-oqv" firstAttribute="leading" secondItem="gdZ-nM-eV9" secondAttribute="trailing" constant="30" id="bj4-Gk-3rn"/>
                                                                         <constraint firstAttribute="topMargin" secondItem="hSh-HG-oyQ" secondAttribute="top" id="iDN-Ds-MKs"/>
                                                                         <constraint firstAttribute="trailingMargin" secondItem="hSh-HG-oyQ" secondAttribute="trailing" id="jqa-TW-7ZV"/>
                                                                         <constraint firstAttribute="trailingMargin" secondItem="qUG-2Z-4HB" secondAttribute="trailing" id="lq3-Rf-NHu"/>
+                                                                        <constraint firstItem="lmR-42-oqv" firstAttribute="top" secondItem="cGO-N7-Rno" secondAttribute="topMargin" constant="-3" id="qAM-xR-W5s"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <connections>
                                                                     <outlet property="comment" destination="qUG-2Z-4HB" id="lyY-LT-um6"/>
+                                                                    <outlet property="ownerHiddenLB" destination="lmR-42-oqv" id="p4i-Ig-b0x"/>
                                                                     <outlet property="timeLB" destination="hSh-HG-oyQ" id="hCp-44-QKA"/>
                                                                     <outlet property="writerLB" destination="gdZ-nM-eV9" id="4yZ-1p-FYZ"/>
                                                                 </connections>

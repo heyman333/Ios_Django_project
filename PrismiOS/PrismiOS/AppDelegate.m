@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
-
 @interface AppDelegate ()
 @property (nonatomic, strong) UINavigationController *loginViewController;
 @property (nonatomic, strong) UINavigationController *mainViewController;
