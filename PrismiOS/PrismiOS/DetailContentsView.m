@@ -36,7 +36,7 @@
     self.mutableDays = [[NSMutableArray alloc] init];
     self.mutableTimes = [[NSMutableArray alloc] init];
     self.mutableComments = [[NSMutableArray alloc] init];
-    self.primary_ID = dataCenter.primary_ID;
+//    self.primary_ID = dataCenter.primary_ID;
     
     [self getComments];
     
@@ -168,8 +168,6 @@
 }
 - (IBAction)popupProfile:(id)sender {
     
-    DataCenter *dataCenter = [DataCenter sharedInstance];
-    dataCenter.primary_ID = self.primary_ID;
     UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
     
     modalSetting.modalPresentationStyle = UIModalPresentationPopover;
@@ -209,8 +207,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
     DataCenter *dataCenter = [DataCenter sharedInstance];
-    
-    NSLog(@"%ld" , indexPath.row);
     dataCenter.primary_ID = [[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"owner"];
 
     UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
