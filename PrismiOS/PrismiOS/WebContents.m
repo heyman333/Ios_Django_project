@@ -132,10 +132,12 @@
     if (cell == nil) {
         cell = [[BoardContentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BoardContentsCell"];
     }
+    
+    NSLog(@"%@",dicTemp);
 
     cell.writerLB.text = [dicTemp objectForKey:@"name"];
     cell.writingTitleLB.text = [dicTemp objectForKey:@"title"];
-    cell.tagLB.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:boardNum]];
+    cell.tagLB.text = [NSString stringWithFormat:@"%@", [[dicTemp objectForKey:@"date"] substringToIndex:10]];
 
     return cell;
     

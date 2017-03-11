@@ -16,4 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *bigDBtn;
 @property (weak, nonatomic) IBOutlet UIButton *etcBtn;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *picPageScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageController;
+
+@property (weak, nonatomic) IBOutlet UIView *infoBar;
+
+
 @end

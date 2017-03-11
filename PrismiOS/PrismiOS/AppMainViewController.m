@@ -13,7 +13,7 @@
 #import "WebContents.h"
 
 
-@interface AppMainViewController ()
+@interface AppMainViewController ()<UIScrollViewDelegate>
 @property NSString *userID;
 
 @end
@@ -22,6 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.infoBar.layer.borderWidth = 1;
+    self.picPageScrollView.delegate = self;
+
     
     // 버튼 addTarget
     self.webBtn.tag=0;
@@ -239,6 +243,27 @@
     
     [uploadTask resume];
 }
+
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    NSInteger currentOffset = scrollView.contentOffset.x;
+    NSLog(@"%ld",currentOffset);
+    NSInteger index = currentOffset / 288;
+    
+    //페이징 스크롤이 완전히 끝나야 페이지 인덱스가 바뀜
+    if (currentOffset % 288 == 0) {
+        self.pageController.currentPage = index;
+    }
+}
+
+
+
+
+
+
 
 
 @end

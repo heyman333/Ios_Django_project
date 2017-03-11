@@ -19,4 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLB;
 @property (weak, nonatomic) IBOutlet UITextView *commentTF;
 
+
+
+
 @end
