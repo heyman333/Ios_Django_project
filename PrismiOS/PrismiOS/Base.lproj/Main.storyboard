@@ -532,7 +532,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="웹프로그래밍" id="uJk-jq-7mM">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" style="plain" id="wdB-t6-CEq">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" id="wdB-t6-CEq">
                                             <inset key="imageInsets" minX="-9" minY="-3" maxX="0.0" maxY="0.0"/>
                                             <connections>
                                                 <action selector="onBackBtn:" destination="5VW-lb-KXi" id="Cjx-ht-CpJ"/>
@@ -1035,7 +1035,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="글 작성" id="Tj8-dt-sv1">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" style="plain" id="rb2-8b-9vT">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" id="rb2-8b-9vT">
                                             <inset key="imageInsets" minX="-9" minY="-3" maxX="0.0" maxY="0.0"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -1289,7 +1289,7 @@
                                                                 <rect key="frame" x="0.0" y="28" width="288" height="87"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNQ-ba-Ndm" id="cGO-N7-Rno">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="86.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="86"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdZ-nM-eV9">
@@ -1380,7 +1380,7 @@
                                 <rect key="frame" x="0.0" y="14" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="글 내용" id="Pw8-VS-Obz">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" style="plain" id="Q8c-js-ovo">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" style="done" id="Q8c-js-ovo">
                                             <inset key="imageInsets" minX="-9" minY="-3" maxX="0.0" maxY="0.0"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>

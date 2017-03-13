@@ -250,7 +250,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     NSInteger currentOffset = scrollView.contentOffset.x;
-    NSLog(@"%ld",currentOffset);
     NSInteger index = currentOffset / 288;
     
     //페이징 스크롤이 완전히 끝나야 페이지 인덱스가 바뀜
