@@ -47,6 +47,7 @@
 		6FA132FC1E586C8900054172 /* login_prism.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA132FB1E586C8900054172 /* login_prism.png */; };
 		6FA132FF1E58776C00054172 /* ProfileSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA132FE1E58776C00054172 /* ProfileSettingController.m */; };
 		6FE8B6E31E6472BB007647A4 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE8B6E21E6472BB007647A4 /* UserInfoViewController.m */; };
+		6FE9F7D71E7863390083852C /* black-faux-leather-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6FE9F7D61E7863390083852C /* black-faux-leather-texture.jpg */; };
 		6FF17E141E6B111700C69E16 /* userInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17E131E6B111700C69E16 /* userInfoBtn.m */; };
 		6FF17E1B1E6B38D400C69E16 /* cancel_Fotor2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF17E1A1E6B38D400C69E16 /* cancel_Fotor2.png */; };
 		6FF41E3A1E657D3000BD53D7 /* 기타_배경.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6FF41E351E657D3000BD53D7 /* 기타_배경.jpg */; };
@@ -111,6 +112,7 @@
 		6FA132FE1E58776C00054172 /* ProfileSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSettingController.m; sourceTree = "<group>"; };
 		6FE8B6E11E6472BB007647A4 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		6FE8B6E21E6472BB007647A4 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		6FE9F7D61E7863390083852C /* black-faux-leather-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black-faux-leather-texture.jpg"; sourceTree = "<group>"; };
 		6FF17E121E6B111700C69E16 /* userInfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userInfoBtn.h; path = Assets.xcassets/userInfoBtn.h; sourceTree = "<group>"; };
 		6FF17E131E6B111700C69E16 /* userInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = userInfoBtn.m; path = Assets.xcassets/userInfoBtn.m; sourceTree = "<group>"; };
 		6FF17E1A1E6B38D400C69E16 /* cancel_Fotor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_Fotor2.png; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		6F9ED8551E5866ED00C4BE90 /* Imgs */ = {
 			isa = PBXGroup;
 			children = (
+				6FE9F7D61E7863390083852C /* black-faux-leather-texture.jpg */,
 				6F13F1761E73DFE500A76712 /* android-checkmark.png */,
 				6F13F1741E73DE9300A76712 /* chevron-left (1).png */,
 				6F13F1801E73E60000A76712 /* ios7-person-outline.png */,
@@ -420,6 +423,7 @@
 				6F13198A1E6D095E00669011 /* Infoooo_Fotor2.png in Resources */,
 				6F65BE771E6311C400CAD9C7 /* user1.png in Resources */,
 				6F13F1751E73DE9300A76712 /* chevron-left (1).png in Resources */,
+				6FE9F7D71E7863390083852C /* black-faux-leather-texture.jpg in Resources */,
 				6F13F1831E73E6AF00A76712 /* ios7-close-empty.png in Resources */,
 				6FA132FC1E586C8900054172 /* login_prism.png in Resources */,
 				6F38DBBC1E6168220051B22C /* back_new.png in Resources */,
