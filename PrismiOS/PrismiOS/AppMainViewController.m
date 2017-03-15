@@ -25,8 +25,6 @@
     
     self.infoBar.layer.borderWidth = 1;
     self.picPageScrollView.delegate = self;
-
-    
     // 버튼 addTarget
     self.webBtn.tag=0;
     self.mobileBtn.tag=1;
