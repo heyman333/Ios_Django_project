@@ -22,5 +22,17 @@
     return dataCenter;
 }
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.nMaager = [[NetworkManager alloc] init];
+    }
+    return self;
+}
+
+
+
 @end
 

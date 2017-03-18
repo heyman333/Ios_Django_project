@@ -37,6 +37,8 @@
 		6F65BE7B1E63189D00CAD9C7 /* DetailContentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F65BE7A1E63189D00CAD9C7 /* DetailContentsView.m */; };
 		6F65BE7E1E63209400CAD9C7 /* StudyDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */; };
 		6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */; };
+		6F7E08271E7DA87B007DA5C5 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E08261E7DA87B007DA5C5 /* NetworkManager.m */; };
+		6F7E082B1E7DAEC5007DA5C5 /* MyContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E082A1E7DAEC5007DA5C5 /* MyContentsViewController.m */; };
 		6F9ED83F1E5850A800C4BE90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED83E1E5850A800C4BE90 /* main.m */; };
 		6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8411E5850A800C4BE90 /* AppDelegate.m */; };
 		6F9ED8451E5850A800C4BE90 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9ED8441E5850A800C4BE90 /* LoginViewController.m */; };
@@ -96,6 +98,10 @@
 		6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyDayTableViewCell.m; sourceTree = "<group>"; };
 		6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardContentsCell.h; sourceTree = "<group>"; };
 		6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardContentsCell.m; sourceTree = "<group>"; };
+		6F7E08251E7DA87B007DA5C5 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		6F7E08261E7DA87B007DA5C5 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		6F7E08291E7DAEC5007DA5C5 /* MyContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContentsViewController.h; sourceTree = "<group>"; };
+		6F7E082A1E7DAEC5007DA5C5 /* MyContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContentsViewController.m; sourceTree = "<group>"; };
 		6F9ED83A1E5850A800C4BE90 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9ED83E1E5850A800C4BE90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F9ED8401E5850A800C4BE90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +222,24 @@
 			name = DetailBoardContents;
 			sourceTree = "<group>";
 		};
+		6F7E08281E7DA8E8007DA5C5 /* APINetwokrManager */ = {
+			isa = PBXGroup;
+			children = (
+				6F7E08251E7DA87B007DA5C5 /* NetworkManager.h */,
+				6F7E08261E7DA87B007DA5C5 /* NetworkManager.m */,
+			);
+			name = APINetwokrManager;
+			sourceTree = "<group>";
+		};
+		6F7E082C1E7DAED7007DA5C5 /* MyContents */ = {
+			isa = PBXGroup;
+			children = (
+				6F7E08291E7DAEC5007DA5C5 /* MyContentsViewController.h */,
+				6F7E082A1E7DAEC5007DA5C5 /* MyContentsViewController.m */,
+			);
+			name = MyContents;
+			sourceTree = "<group>";
+		};
 		6F9ED8311E5850A800C4BE90 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +261,8 @@
 		6F9ED83C1E5850A800C4BE90 /* PrismiOS */ = {
 			isa = PBXGroup;
 			children = (
+				6F7E082C1E7DAED7007DA5C5 /* MyContents */,
+				6F7E08281E7DA8E8007DA5C5 /* APINetwokrManager */,
 				6FCB8D0B1E6ECE0700019F47 /* ShowUserInfo */,
 				6F0557FB1E5FD7CA0092B82B /* AppDelegate */,
 				6FF17E151E6B112500C69E16 /* customBtn */,
@@ -517,11 +543,13 @@
 				6F9ED8421E5850A800C4BE90 /* AppDelegate.m in Sources */,
 				6F1129A71E595BEC0030D7A1 /* WebContents.m in Sources */,
 				6FF898BB1E68671200DB28B6 /* WritingContentsViewController.m in Sources */,
+				6F7E082B1E7DAEC5007DA5C5 /* MyContentsViewController.m in Sources */,
 				6FE8B6E31E6472BB007647A4 /* UserInfoViewController.m in Sources */,
 				6F4FA5AC1E66765C000C0262 /* CommentTableViewCell.m in Sources */,
 				6F38DBC31E616D1B0051B22C /* AppMainViewController.m in Sources */,
 				6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */,
 				6F65BE7B1E63189D00CAD9C7 /* DetailContentsView.m in Sources */,
+				6F7E08271E7DA87B007DA5C5 /* NetworkManager.m in Sources */,
 				6F9ED83F1E5850A800C4BE90 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
