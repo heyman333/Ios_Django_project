@@ -67,9 +67,11 @@
         [self.heightConstraint setConstant:(self.mutableDays.count)*44.0];
         [self.contentsHeightConst setConstant:600 +(self.mutableDays.count)*44.0];
         self.finalConst = (600 +(self.mutableDays.count)*44.0);
+        [self.view layoutIfNeeded];
     }
     else{
         [self.heightConstraint setConstant:0];
+        [self.view layoutIfNeeded];
     }
     
 }
@@ -101,6 +103,7 @@
                                                     [self.commentTable reloadData];
                                                     [self.commentHeightConstraint setConstant:self.mutableComments.count * 87.0];
                                                     [self.contentsHeightConst setConstant:self.finalConst + self.mutableComments.count * 87.0];
+                                                    [self.view layoutIfNeeded];
                                                 }
                                       //                                                    dispatch_async(dispatch_get_main_queue(), ^{
                                       //                                                        [self.tableView reloadData];
@@ -218,11 +221,4 @@
     
 }
 
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
 @end
