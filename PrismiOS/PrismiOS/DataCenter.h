@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetworkManager.h"
 
 @interface DataCenter : NSObject
 @property NSString *serverToken; //민구서버 토큰
@@ -15,6 +16,7 @@
 @property NSString *primary_ID;
 @property NSNumber *board_ID;
 @property NSDictionary *userInfos;
+@property NetworkManager *nMaager;
 
 +(instancetype)sharedInstance;
 @end

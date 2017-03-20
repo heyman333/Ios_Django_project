@@ -58,7 +58,7 @@
                     
                     AppMainViewController *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"main"];
                     
-                    UIAlertController *gotoMainAlert = [UIAlertController alertControllerWithTitle:@"로그인" message:@"처음 접속하는 분이라면 개인정보를 설정해주세요" preferredStyle: UIAlertControllerStyleAlert];
+                    UIAlertController *gotoMainAlert = [UIAlertController alertControllerWithTitle:@"로그인" message:@"최초 접속시 개인정보를 설정해주세요" preferredStyle: UIAlertControllerStyleAlert];
                     
                     UIAlertAction *action = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         [self.navigationController pushViewController:mainVC animated:YES];
