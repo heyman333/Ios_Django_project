@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *writingTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *writerLB;
-
 @property (weak, nonatomic) IBOutlet UILabel *tagLB;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLB;
 
 @end

@@ -1183,7 +1183,7 @@
                                                                 <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3qS-Wp-g5e" id="Rgm-vX-z6d">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTJ-AW-DQZ">
@@ -1290,7 +1290,7 @@
                                                                 <rect key="frame" x="0.0" y="28" width="288" height="87"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNQ-ba-Ndm" id="cGO-N7-Rno">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="86"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="86.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdZ-nM-eV9">
@@ -1947,12 +1947,27 @@
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="1" height="1"/>
                                                         </label>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUw-wx-aif">
+                                                            <rect key="frame" x="225" y="22" width="66.5" height="21"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="category">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <font key="NSFont" size="17" name="AppleSDGothicNeo-Bold"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.58149566210000003" green="0.67559018339999999" blue="0.62357082799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="bwk-uT-SBv" firstAttribute="leading" secondItem="L0h-yj-1dz" secondAttribute="leading" id="00A-pa-KRt"/>
                                                         <constraint firstAttribute="trailing" secondItem="bwk-uT-SBv" secondAttribute="trailing" id="0HZ-GP-lYa"/>
+                                                        <constraint firstItem="bwk-uT-SBv" firstAttribute="top" secondItem="DUw-wx-aif" secondAttribute="bottom" constant="-43" id="85n-WB-pWU"/>
                                                         <constraint firstItem="C8t-T4-pBX" firstAttribute="leading" secondItem="L0h-yj-1dz" secondAttribute="leading" constant="1" id="FlC-Wf-uFB"/>
+                                                        <constraint firstItem="DUw-wx-aif" firstAttribute="leading" secondItem="bwk-uT-SBv" secondAttribute="trailing" constant="-75" id="STc-sY-EO3"/>
                                                         <constraint firstItem="YbU-pE-Kfm" firstAttribute="leading" secondItem="L0h-yj-1dz" secondAttribute="leading" constant="1" id="cXe-WS-wZl"/>
                                                         <constraint firstItem="YbU-pE-Kfm" firstAttribute="top" secondItem="C8t-T4-pBX" secondAttribute="bottom" constant="20" id="czk-gS-W8j"/>
                                                         <constraint firstAttribute="bottom" secondItem="bwk-uT-SBv" secondAttribute="bottom" id="gxL-w1-Gek"/>
@@ -1973,6 +1988,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="categoryLB" destination="DUw-wx-aif" id="Qlw-ZX-ofk"/>
                                             <outlet property="tagLB" destination="C8t-T4-pBX" id="Ch5-Hv-BIk"/>
                                             <outlet property="writerLB" destination="YyH-9c-ANf" id="rLw-HW-xi7"/>
                                             <outlet property="writingTitleLB" destination="YbU-pE-Kfm" id="3kx-GA-Gdj"/>
@@ -2012,10 +2028,13 @@
                             <constraint firstItem="roL-Vv-XJs" firstAttribute="leading" secondItem="5zm-RQ-jN3" secondAttribute="leading" id="yXd-Jb-JnQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentsTable" destination="roL-Vv-XJs" id="wtH-Wb-Xe7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6B-na-VuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6784" y="-2355"/>
+            <point key="canvasLocation" x="-6926" y="-2344"/>
         </scene>
     </scenes>
     <resources>
