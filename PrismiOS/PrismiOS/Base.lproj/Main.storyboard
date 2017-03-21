@@ -1041,7 +1041,7 @@
                                                 <action selector="onBackBtn:" destination="mp4-08-5D6" id="cmG-Rf-Skj"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="android-checkmark.png" style="plain" id="zuA-if-9IN">
+                                        <barButtonItem key="rightBarButtonItem" image="android-checkmark.png" id="zuA-if-9IN">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="writeDoneClicked:" destination="mp4-08-5D6" id="KHc-5u-M4h"/>
@@ -1381,7 +1381,7 @@
                                 <rect key="frame" x="0.0" y="14" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="글 내용" id="Pw8-VS-Obz">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" style="done" id="Q8c-js-ovo">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron-left (1).png" id="Q8c-js-ovo">
                                             <inset key="imageInsets" minX="-9" minY="-3" maxX="0.0" maxY="0.0"/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
