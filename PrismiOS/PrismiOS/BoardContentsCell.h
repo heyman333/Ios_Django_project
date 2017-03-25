@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *writerLB;
 @property (weak, nonatomic) IBOutlet UILabel *tagLB;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLB;
+@property (weak, nonatomic) IBOutlet UIView *mycontentsView;
+@property (weak, nonatomic) IBOutlet UIView *allcontentsView;
 
 @end

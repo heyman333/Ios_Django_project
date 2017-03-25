@@ -116,6 +116,60 @@
     
 }
 
+- (IBAction)onBackBtn:(UIBarButtonItem *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+- (IBAction)popupProfile:(id)sender {
+    
+    [DataCenter sharedInstance].primary_ID = [self.contentsInfos objectForKey:@"owner"];
+    UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
+    modalSetting.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:modalSetting animated:YES completion:nil];
+}
+
+
+
+- (IBAction)writeComment:(UIButton *)sender {
+    
+    DataCenter *dataCenter = [DataCenter sharedInstance];
+
+    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
+    
+    [bodyParameters setObject:[dataCenter.userInfos objectForKey:@"nickname"] forKey:@"name"];
+    [bodyParameters setObject:self.commentTF.text forKey:@"content"];
+    [bodyParameters setObject:[self.contentsInfos objectForKey:@"id"] forKey:@"board_id"];
+    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/";
+    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",dataCenter.serverToken];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
+
+    [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success!");
+        [self.mutableComments removeAllObjects];
+        [self getComments];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error다 이색기야!: %@", error);
+    }];
+}
+
+
+//MARK: - TableView delegateMethod
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+    DataCenter *dataCenter = [DataCenter sharedInstance];
+    dataCenter.primary_ID = [[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"owner"];
+
+    UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
+    
+    modalSetting.modalPresentationStyle = UIModalPresentationPopover;
+    
+    [self presentViewController:modalSetting animated:YES completion:nil];
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
@@ -151,11 +205,10 @@
     }
     
 }
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (tableView == self.studyTimeTable) {
-    
+        
         return self.mutableDays.count;
     }
     else{
@@ -164,61 +217,6 @@
     
 }
 
-- (IBAction)onBackBtn:(UIBarButtonItem *)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
-- (IBAction)popupProfile:(id)sender {
-    
-    UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
-    
-    modalSetting.modalPresentationStyle = UIModalPresentationPopover;
-    
-    [self presentViewController:modalSetting animated:YES completion:nil];
-}
 
-
-
-- (IBAction)writeComment:(UIButton *)sender {
-    
-    DataCenter *dataCenter = [DataCenter sharedInstance];
-
-    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
-    
-    [bodyParameters setObject:[dataCenter.userInfos objectForKey:@"nickname"] forKey:@"name"];
-    [bodyParameters setObject:self.commentTF.text forKey:@"content"];
-    [bodyParameters setObject:[self.contentsInfos objectForKey:@"id"] forKey:@"board_id"];
-    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/";
-    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",dataCenter.serverToken];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setValue:authURL forHTTPHeaderField:@"Authorization"];
-
-    [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"success!");
-        [self.mutableComments removeAllObjects];
-        [self getComments];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error다 이색기야!: %@", error);
-    }];
-}
-
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-
-    DataCenter *dataCenter = [DataCenter sharedInstance];
-    dataCenter.primary_ID = [[self.mutableComments objectAtIndex:indexPath.row] objectForKey:@"owner"];
-
-    UserInfoViewController *modalSetting = [self.storyboard instantiateViewControllerWithIdentifier:@"UserInfoViewController"];
-    
-    modalSetting.modalPresentationStyle = UIModalPresentationPopover;
-    
-    [self presentViewController:modalSetting animated:YES completion:nil];
-    
-    
-}
 
 @end

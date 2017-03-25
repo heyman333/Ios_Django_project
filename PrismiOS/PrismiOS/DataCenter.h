@@ -14,9 +14,9 @@
 @property NSDictionary *contentsInfo; //
 @property NSDictionary *writingInfos; //
 @property NSString *primary_ID;
+@property NSString *loginUserPrimary_ID;
 @property NSNumber *board_ID;
 @property NSDictionary *userInfos;
 @property NetworkManager *nMaager;
-
 +(instancetype)sharedInstance;
 @end

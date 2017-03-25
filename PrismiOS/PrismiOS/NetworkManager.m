@@ -52,8 +52,6 @@
              NSLog(@"error %@", error);
              completion(NO,error);
          }];
-    
-    
 }
 
 -(void)getBigDataContents:(NSString *)token completion:(CompletionBlock)completion{
@@ -74,10 +72,6 @@
              NSLog(@"error %@", error);
              completion(NO,error);
          }];
-    
-    
-    
-
 }
 
 -(void)getDesignContents:(NSString *)token completion:(CompletionBlock)completion{

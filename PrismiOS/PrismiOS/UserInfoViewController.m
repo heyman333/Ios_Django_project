@@ -35,9 +35,7 @@
     self.katakID.text=@"등록안함";
     self.interestingLB.text=@"등록안함";
     self.mySelfLB.text=@"등록안함";
-    
-    
-    
+
     [self getUserProfile];
 
     
@@ -95,38 +93,38 @@
         }
         if ([self.resultDic objectForKey:@"application"] == [NSNumber numberWithBool:YES]) {
             
-            interstring = [interstring stringByAppendingString:@"응용프로그래밍/"];
+            interstring = [interstring stringByAppendingString:@"응용프로그래밍 / "];
             NSLog(@"%@", interstring);
         }
         if ([self.resultDic objectForKey:@"back"] == [NSNumber numberWithBool:YES]) {
             
-            interstring = [interstring stringByAppendingString:@"백엔드/"];
+            interstring = [interstring stringByAppendingString:@"백엔드 / "];
         }
         if ([self.resultDic objectForKey:@"bigdata"] == [NSNumber numberWithBool:YES]) {
             
-            interstring = [interstring stringByAppendingString:@"빅데이터/"];
+            interstring = [interstring stringByAppendingString:@"빅데이터 / "];
         }
         if ([self.resultDic objectForKey:@"front"] == [NSNumber numberWithBool:YES]) {
             
-            interstring = [interstring stringByAppendingString:@"프론트/"];
+            interstring = [interstring stringByAppendingString:@"프론트 / "];
         }
         if ([self.resultDic objectForKey:@"game"] == [NSNumber numberWithBool:YES]) {
-            interstring = [interstring stringByAppendingString:@"게임 프로그래밍/"];
+            interstring = [interstring stringByAppendingString:@"게임 프로그래밍 / "];
         }
         if ([self.resultDic objectForKey:@"graphic"] == [NSNumber numberWithBool:YES]) {
-            interstring = [interstring stringByAppendingString:@"그래픽/"];
+            interstring = [interstring stringByAppendingString:@"그래픽 / "];
         }
         if ([self.resultDic objectForKey:@"ios"] == [NSNumber numberWithBool:YES]) {
-            interstring = [interstring stringByAppendingString:@"iOS/"];
+            interstring = [interstring stringByAppendingString:@"iOS / "];
         }
         if ([self.resultDic objectForKey:@"machine"] == [NSNumber numberWithBool:YES]) {
-            interstring = [interstring stringByAppendingString:@"머신러닝/"];
+            interstring = [interstring stringByAppendingString:@"머신러닝 / "];
         }
         if ([self.resultDic objectForKey:@"planning"] == [NSNumber numberWithBool:YES]) {
-            interstring = [interstring stringByAppendingString:@"기획/"];
+            interstring = [interstring stringByAppendingString:@"기획 / "];
         }
         if ([self.resultDic objectForKey:@"uiux"] == [NSNumber numberWithBool:YES]) {
-            interstring = [interstring stringByAppendingString:@"UI / UX/"];
+            interstring = [interstring stringByAppendingString:@"UI-UX / "];
         }
         
         NSLog(@"intersing : %@", interstring);
@@ -139,13 +137,6 @@
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              NSLog(@"error다 이색기야!: %@", error);
          }];
- 
-    
-    
-    
-    
-    
-    
 }
 
 -(void)profileImgSet{

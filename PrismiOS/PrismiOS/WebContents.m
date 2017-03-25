@@ -122,12 +122,9 @@
 
     
     NSInteger boardNum = self.boardArr.count-1-indexPath.row;
-
-
     NSDictionary *dicTemp = [self.boardArr objectAtIndex:boardNum];
 
     BoardContentsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardContentsCell"];
-    
     
     if (cell == nil) {
         cell = [[BoardContentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BoardContentsCell"];

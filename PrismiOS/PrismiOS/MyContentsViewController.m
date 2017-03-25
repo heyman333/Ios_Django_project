@@ -25,7 +25,7 @@
     NSLog(@"---------------------------------------my-------------------");
     self.resultArr = [[NSMutableArray alloc] init];
     NSString *token = [DataCenter sharedInstance].serverToken;
-    NSString *user_id = [DataCenter sharedInstance].primary_ID;
+    NSString *user_id = [[DataCenter sharedInstance].userInfos objectForKey:@"userID"];
     NSLog(@"%@", user_id);
 
     [[DataCenter sharedInstance].nMaager getWebContents:token completion:^(BOOL isSucess, id result) {
