@@ -67,35 +67,21 @@
     self.serverToken = self.dataCenter.serverToken;
     NSLog(@"servertoken : %@ ",self.serverToken);
     [self profileImgSet];
-    //    [self getToken];
+    [self addObserverMethod];
 }
-//
-//-(void)getToken{
-//    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
-//    [bodyParameters setObject:self.userId forKey:@"username"];
-//    [bodyParameters setObject:self.userId forKey:@"password"];
-//
-//    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/auth/token/"
-//                                                                                             parameters:bodyParameters
-//                                                                              constructingBodyWithBlock:nil error:nil];
-//
-//    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-//
-//    NSURLSessionUploadTask *uploadTask;
-//    uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-//
-//        if (error) {
-//            NSLog(@"\n\n getToken task error = %@\n\n", error);
-//        }
-//        else {
-//            NSLog(@"토큰을 받아왔습니다");
-//            self.serverToken= [responseObject objectForKey:@"token"];
-//        }
-//    }];
-//
-//    [uploadTask resume];
-//}
 
+//MARK: - KerboardNotification 구현 / 등록
+- (void)addObserverMethod{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboadUpNoti:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboadNotiHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+- (void)keyboadUpNoti:(NSNotification *)sender{
+    CGSize keySize = [[sender.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    self.view.frame = CGRectMake(0, -keySize.height, self.view.frame.size.width, self.view.frame.size.height);
+}
+- (void)keyboadNotiHide:(NSNotification *)sender{
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
 
 //카톡 프로필을 설정하는 메소드
 -(void)profileImgSet{

@@ -166,6 +166,8 @@
 - (void)keyboadNotiHide:(NSNotification *)sender{
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
+
+//MARK: -pickerView Method
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
 
     return 1;
@@ -181,9 +183,7 @@
 }
 
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    
     return 40.0;
-
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
@@ -208,9 +208,64 @@
             break;
     }
 }
+//time picker time changed callBack
+-(void)timeChanged:(UIDatePicker *)sender{
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"a h:mm"];
+    if (sender.tag == 1 ) {
+        self.monTimeTF.text = [outputFormatter stringFromDate:self.timePicker.date];
+        self.currentTF = self.monTimeTF;
+    }else if (sender.tag == 2 ) {
+        self.monTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker2.date];
+        self.monTime = [NSString stringWithFormat:@"%@ ~ %@", self.monTimeTF.text, self.monTimeEndTF.text];
+        self.currentTF = self.monTimeEndTF;
+    }else if (sender.tag == 3 ) {
+        self.tueTimeTF.text = [outputFormatter stringFromDate:self.timePicker3.date];
+        self.currentTF = self.tueTimeTF;
+    }else if (sender.tag == 4 ) {
+        self.tueTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker4.date];
+        self.tueTime = [NSString stringWithFormat:@"%@ ~ %@", self.tueTimeTF.text, self.tueTimeEndTF.text];
+        self.currentTF = self.tueTimeEndTF;
+    }else if (sender.tag == 5 ) {
+        self.wedTimeTF.text = [outputFormatter stringFromDate:self.timePicker5.date];
+        self.currentTF = self.wedTimeTF;
+    }else if (sender.tag == 6 ) {
+        self.wedTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker6.date];
+        self.wedTime = [NSString stringWithFormat:@"%@ ~ %@", self.wedTimeTF.text, self.wedTimeEndTF.text];
+        self.currentTF = self.wedTimeEndTF;
+    }else if (sender.tag == 7 ) {
+        self.thuTimeTF.text = [outputFormatter stringFromDate:self.timePicker7.date];
+        self.currentTF = self.thuTimeTF;
+    }else if (sender.tag == 8 ) {
+        self.thuTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker8.date];
+        self.thuTime = [NSString stringWithFormat:@"%@ ~ %@", self.thuTimeTF.text, self.thuTimeEndTF.text];
+        self.currentTF = self.thuTimeEndTF;
+    }else if (sender.tag == 9 ) {
+        self.friTimeTF.text = [outputFormatter stringFromDate:self.timePicker9.date];
+        self.currentTF = self.friTimeTF;
+    }else if (sender.tag == 10 ) {
+        self.friTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker10.date];
+        self.friTime = [NSString stringWithFormat:@"%@ ~ %@", self.friTimeTF.text, self.friTimeEndTF.text];
+        self.currentTF = self.friTimeEndTF;
+    }else if (sender.tag == 11 ) {
+        self.satTimeTF.text = [outputFormatter stringFromDate:self.timePicker11.date];
+        self.currentTF = self.satTimeTF;
+    }else if (sender.tag == 12 ) {
+        self.satTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker12.date];
+        self.satTime = [NSString stringWithFormat:@"%@ ~ %@", self.satTimeTF.text, self.satTimeEndTF.text];
+        self.currentTF = self.satTimeEndTF;
+    }else if (sender.tag == 13 ) {
+        self.sunTimeTF.text = [outputFormatter stringFromDate:self.timePicker13.date];
+        self.currentTF = self.sunTimeTF;
+    }else if (sender.tag == 14 ) {
+        self.sunTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker14.date];
+        self.sunTime = [NSString stringWithFormat:@"%@ ~ %@", self.sunTimeTF.text, self.sunTimeEndTF.text];
+        self.currentTF = self.sunTimeEndTF;
+    }
+}
 
 
-
+//글쓰기 완료 버튼
 - (IBAction)writeDoneClicked:(UIBarButtonItem *)sender {
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
@@ -274,61 +329,6 @@
 - (IBAction)onBackBtn:(UIBarButtonItem *)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)timeChanged:(UIDatePicker *)sender{
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setDateFormat:@"a h:mm"];
-    if (sender.tag == 1 ) {
-        self.monTimeTF.text = [outputFormatter stringFromDate:self.timePicker.date];
-        self.currentTF = self.monTimeTF;
-    }else if (sender.tag == 2 ) {
-        self.monTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker2.date];
-        self.monTime = [NSString stringWithFormat:@"%@ ~ %@", self.monTimeTF.text, self.monTimeEndTF.text];
-        self.currentTF = self.monTimeEndTF;
-    }else if (sender.tag == 3 ) {
-        self.tueTimeTF.text = [outputFormatter stringFromDate:self.timePicker3.date];
-        self.currentTF = self.tueTimeTF;
-    }else if (sender.tag == 4 ) {
-        self.tueTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker4.date];
-        self.tueTime = [NSString stringWithFormat:@"%@ ~ %@", self.tueTimeTF.text, self.tueTimeEndTF.text];
-        self.currentTF = self.tueTimeEndTF;
-    }else if (sender.tag == 5 ) {
-        self.wedTimeTF.text = [outputFormatter stringFromDate:self.timePicker5.date];
-        self.currentTF = self.wedTimeTF;
-    }else if (sender.tag == 6 ) {
-        self.wedTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker6.date];
-        self.wedTime = [NSString stringWithFormat:@"%@ ~ %@", self.wedTimeTF.text, self.wedTimeEndTF.text];
-        self.currentTF = self.wedTimeEndTF;
-    }else if (sender.tag == 7 ) {
-        self.thuTimeTF.text = [outputFormatter stringFromDate:self.timePicker7.date];
-        self.currentTF = self.thuTimeTF;
-    }else if (sender.tag == 8 ) {
-        self.thuTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker8.date];
-        self.thuTime = [NSString stringWithFormat:@"%@ ~ %@", self.thuTimeTF.text, self.thuTimeEndTF.text];
-        self.currentTF = self.thuTimeEndTF;
-    }else if (sender.tag == 9 ) {
-        self.friTimeTF.text = [outputFormatter stringFromDate:self.timePicker9.date];
-        self.currentTF = self.friTimeTF;
-    }else if (sender.tag == 10 ) {
-        self.friTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker10.date];
-        self.friTime = [NSString stringWithFormat:@"%@ ~ %@", self.friTimeTF.text, self.friTimeEndTF.text];
-        self.currentTF = self.friTimeEndTF;
-    }else if (sender.tag == 11 ) {
-        self.satTimeTF.text = [outputFormatter stringFromDate:self.timePicker11.date];
-        self.currentTF = self.satTimeTF;
-    }else if (sender.tag == 12 ) {
-        self.satTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker12.date];
-        self.satTime = [NSString stringWithFormat:@"%@ ~ %@", self.satTimeTF.text, self.satTimeEndTF.text];
-        self.currentTF = self.satTimeEndTF;
-    }else if (sender.tag == 13 ) {
-        self.sunTimeTF.text = [outputFormatter stringFromDate:self.timePicker13.date];
-        self.currentTF = self.sunTimeTF;
-    }else if (sender.tag == 14 ) {
-        self.sunTimeEndTF.text = [outputFormatter stringFromDate:self.timePicker14.date];
-        self.sunTime = [NSString stringWithFormat:@"%@ ~ %@", self.sunTimeTF.text, self.sunTimeEndTF.text];
-        self.currentTF = self.sunTimeEndTF;
-    }
 }
 - (IBAction)ontapped:(UITapGestureRecognizer *)sender {
     [self.currentTF resignFirstResponder];

@@ -130,7 +130,7 @@
 }
 
 
-
+//MARK: - Write Comment Method
 - (IBAction)writeComment:(UIButton *)sender {
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
@@ -149,6 +149,7 @@
 
     [manager POST:urlString parameters:bodyParameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success!");
+        self.commentTF.text = @"";
         [self.mutableComments removeAllObjects];
         [self getComments];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

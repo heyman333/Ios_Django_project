@@ -164,7 +164,7 @@
     
     NSLog(@"등록된 유저인지 찾자!");
     __block NSArray *results;
-    __block BOOL isregisterd;
+    __block BOOL isregisterd = NO;
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
@@ -235,6 +235,7 @@
         }
         else {
             NSLog(@"등록 성공!");
+               [self getToken];
             
         }
     }];
