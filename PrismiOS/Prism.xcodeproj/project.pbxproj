@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CF8CF95F6FBB8826093AD86 /* libPods-PrismiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D92CA73A825B10CAF869E0 /* libPods-PrismiOS.a */; };
+		5319C77415CA071887F28E23 /* libPods-Prism.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E53F6E93CA7A8F0DB4D826C /* libPods-Prism.a */; };
 		6F1129A71E595BEC0030D7A1 /* WebContents.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1129A61E595BEC0030D7A1 /* WebContents.m */; };
 		6F13198A1E6D095E00669011 /* Infoooo_Fotor2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1319891E6D095E00669011 /* Infoooo_Fotor2.png */; };
 		6F13F16F1E73BFB500A76712 /* board_back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F13F16E1E73BFB500A76712 /* board_back.jpg */; };
@@ -36,6 +37,7 @@
 		6F65BE771E6311C400CAD9C7 /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F65BE761E6311C400CAD9C7 /* user1.png */; };
 		6F65BE7B1E63189D00CAD9C7 /* DetailContentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F65BE7A1E63189D00CAD9C7 /* DetailContentsView.m */; };
 		6F65BE7E1E63209400CAD9C7 /* StudyDayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */; };
+		6F6CC2C91E8C44C700ABE3A7 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6CC2C81E8C44C700ABE3A7 /* KakaoOpenSDK.framework */; };
 		6F6EBE741E5DF97E00FBFA0A /* BoardContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */; };
 		6F7E08271E7DA87B007DA5C5 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E08261E7DA87B007DA5C5 /* NetworkManager.m */; };
 		6F7E082B1E7DAEC5007DA5C5 /* MyContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E082A1E7DAEC5007DA5C5 /* MyContentsViewController.m */; };
@@ -45,7 +47,6 @@
 		6F9ED8481E5850A800C4BE90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F9ED8461E5850A800C4BE90 /* Main.storyboard */; };
 		6F9ED84A1E5850A800C4BE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9ED8491E5850A800C4BE90 /* Assets.xcassets */; };
 		6F9ED8571E58670D00C4BE90 /* Loading_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F9ED8561E58670D00C4BE90 /* Loading_Screen.jpg */; };
-		6FA132FA1E58690000054172 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA132F91E58690000054172 /* KakaoOpenSDK.framework */; };
 		6FA132FC1E586C8900054172 /* login_prism.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA132FB1E586C8900054172 /* login_prism.png */; };
 		6FA132FF1E58776C00054172 /* ProfileSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA132FE1E58776C00054172 /* ProfileSettingController.m */; };
 		6FE8B6E31E6472BB007647A4 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE8B6E21E6472BB007647A4 /* UserInfoViewController.m */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E53F6E93CA7A8F0DB4D826C /* libPods-Prism.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Prism.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DE4C19C9B61F6DBB2A0741 /* Pods-PrismiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrismiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrismiOS/Pods-PrismiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1129A51E595BEC0030D7A1 /* WebContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebContents.h; sourceTree = "<group>"; };
 		6F1129A61E595BEC0030D7A1 /* WebContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebContents.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		6F65BE7A1E63189D00CAD9C7 /* DetailContentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailContentsView.m; sourceTree = "<group>"; };
 		6F65BE7C1E63209400CAD9C7 /* StudyDayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDayTableViewCell.h; sourceTree = "<group>"; };
 		6F65BE7D1E63209400CAD9C7 /* StudyDayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyDayTableViewCell.m; sourceTree = "<group>"; };
+		6F6CC2C81E8C44C700ABE3A7 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		6F6EBE721E5DF97E00FBFA0A /* BoardContentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardContentsCell.h; sourceTree = "<group>"; };
 		6F6EBE731E5DF97E00FBFA0A /* BoardContentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardContentsCell.m; sourceTree = "<group>"; };
 		6F7E08251E7DA87B007DA5C5 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -112,7 +115,6 @@
 		6F9ED8491E5850A800C4BE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F9ED84E1E5850A800C4BE90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F9ED8561E58670D00C4BE90 /* Loading_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Loading_Screen.jpg; sourceTree = "<group>"; };
-		6FA132F91E58690000054172 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		6FA132FB1E586C8900054172 /* login_prism.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_prism.png; sourceTree = "<group>"; };
 		6FA132FD1E58776C00054172 /* ProfileSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSettingController.h; sourceTree = "<group>"; };
 		6FA132FE1E58776C00054172 /* ProfileSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSettingController.m; sourceTree = "<group>"; };
@@ -131,6 +133,8 @@
 		6FF898BA1E68671200DB28B6 /* WritingContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritingContentsViewController.m; sourceTree = "<group>"; };
 		77E649D68EFB75A3A49FF8C3 /* Pods-PrismiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrismiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrismiOS/Pods-PrismiOS.release.xcconfig"; sourceTree = "<group>"; };
 		C6D92CA73A825B10CAF869E0 /* libPods-PrismiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PrismiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3C3328FD2C5D8408A63F4A /* Pods-Prism.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prism.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prism/Pods-Prism.debug.xcconfig"; sourceTree = "<group>"; };
+		DF377A77E61C97E14F6C6E80 /* Pods-Prism.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prism.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prism/Pods-Prism.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF8CF95F6FBB8826093AD86 /* libPods-PrismiOS.a in Frameworks */,
-				6FA132FA1E58690000054172 /* KakaoOpenSDK.framework in Frameworks */,
+				5319C77415CA071887F28E23 /* libPods-Prism.a in Frameworks */,
+				6F6CC2C91E8C44C700ABE3A7 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +374,8 @@
 			children = (
 				40DE4C19C9B61F6DBB2A0741 /* Pods-PrismiOS.debug.xcconfig */,
 				77E649D68EFB75A3A49FF8C3 /* Pods-PrismiOS.release.xcconfig */,
+				DB3C3328FD2C5D8408A63F4A /* Pods-Prism.debug.xcconfig */,
+				DF377A77E61C97E14F6C6E80 /* Pods-Prism.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -376,8 +383,9 @@
 		FB0C556C6FEB448DC9FE1D3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6FA132F91E58690000054172 /* KakaoOpenSDK.framework */,
+				6F6CC2C81E8C44C700ABE3A7 /* KakaoOpenSDK.framework */,
 				C6D92CA73A825B10CAF869E0 /* libPods-PrismiOS.a */,
+				0E53F6E93CA7A8F0DB4D826C /* libPods-Prism.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -495,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrismiOS/Pods-PrismiOS-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prism/Pods-Prism-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		82FC963449889E7D380E7331 /* [CP] Copy Pods Resources */ = {
@@ -510,7 +518,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrismiOS/Pods-PrismiOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prism/Pods-Prism-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8656ABB2F9EB430BDC8D6D2C /* [CP] Check Pods Manifest.lock */ = {
@@ -658,34 +666,32 @@
 		};
 		6F9ED8521E5850A800C4BE90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40DE4C19C9B61F6DBB2A0741 /* Pods-PrismiOS.debug.xcconfig */;
+			baseConfigurationReference = DB3C3328FD2C5D8408A63F4A /* Pods-Prism.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 5AF2J46QXC;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Users/hanyoungsoo/Desktop/Ios_Django/PrismiOS;
 				INFOPLIST_FILE = PrismiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hys.develop.PrismiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hys.develop.Prism;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		6F9ED8531E5850A800C4BE90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77E649D68EFB75A3A49FF8C3 /* Pods-PrismiOS.release.xcconfig */;
+			baseConfigurationReference = DF377A77E61C97E14F6C6E80 /* Pods-Prism.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 5AF2J46QXC;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Users/hanyoungsoo/Desktop/Ios_Django/PrismiOS;
 				INFOPLIST_FILE = PrismiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hys.develop.PrismiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hys.develop.Prism;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PrismiOS.xcscheme</key>
+		<key>Pods-Prism.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<key>89ABD226EFA0ED45B6F819A5E60D81FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D61431A70F7E2DFFAB9C762A208B8172</key>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

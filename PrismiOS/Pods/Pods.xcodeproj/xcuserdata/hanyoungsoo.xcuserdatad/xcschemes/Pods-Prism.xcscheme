@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D61431A70F7E2DFFAB9C762A208B8172'
-               BlueprintName = 'Pods-PrismiOS'
+               BlueprintIdentifier = '89ABD226EFA0ED45B6F819A5E60D81FA'
+               BlueprintName = 'Pods-Prism'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-PrismiOS.a'>
+               BuildableName = 'libPods-Prism.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
