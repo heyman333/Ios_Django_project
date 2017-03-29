@@ -17,7 +17,7 @@ iOS공부와 DJANGO공부를 막 시작하고나서 연습삼아 만들어본 �
 - iOS :
   - 개발자 : 한영수 _(https://github.com/heyman333)_
   - 사용언어 : objective-c
-  - OpenSources : [AFNetwork](https://github.com/AFNetworking/AFNetworking)
+  - OpenSources : [AFNetwork](https://github.com/AFNetworking/AFNetworking), [KAKAO API](https://developers.kakao.com/docs/ios) 
 
 ---
 - 프리뷰 :
