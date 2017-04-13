@@ -73,7 +73,7 @@
             }];
         } else {
             // failed
-            NSLog(@"login failed.");
+            NSLog(@"login failed.%@", error);
         }
     }];
     

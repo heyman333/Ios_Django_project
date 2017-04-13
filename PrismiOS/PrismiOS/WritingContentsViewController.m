@@ -269,7 +269,7 @@
 - (IBAction)writeDoneClicked:(UIBarButtonItem *)sender {
     
     DataCenter *dataCenter = [DataCenter sharedInstance];
-    NSString *urlString=@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/write/";
+    NSString *urlString=@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/write/";
     NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] init];
     
     [bodyParameters setObject:self.contentsTitle.text forKey:@"title"];

@@ -92,7 +92,7 @@
 //    [bodyParameters setObject:@"타이틀입니다.2" forKey:@"title"];
 //    [bodyParameters setObject:@"한영수2" forKey:@"name"];
 //    [bodyParameters setObject:@"나는 iOS개발자다2     !!!" forKey:@"content"];
-//    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com:7777/board/board/";
+//    NSString *urlString = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com:7777/board/board/";
 //    NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",self.serverToken];
 //    
 //    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];

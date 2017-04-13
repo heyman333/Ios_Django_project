@@ -118,7 +118,7 @@
 
 - (IBAction)saveProfile:(UIButton *)sender {
     
-    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/profiles/";
+    NSString *urlString = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/users/profiles/";
     NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",self.serverToken];
     
     

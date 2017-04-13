@@ -78,7 +78,7 @@
     [bodyParameters setObject:self.userID forKey:@"username"];
     [bodyParameters setObject:self.userID forKey:@"password"];
     
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/auth/token/"
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/users/auth/token/"
                                                                                              parameters:bodyParameters
                                                                               constructingBodyWithBlock:nil error:nil];
     
@@ -125,28 +125,28 @@
     switch (sender.tag) {
             //webBtn
         case 0:
-            dataCenter.contentsInfo = @{@"title":@"웹프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/web/"};
+            dataCenter.contentsInfo = @{@"title":@"웹프로그래밍",@"apiURL":@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/web/"};
             break;
             
             //mobileBtn
         case 1:
             
-            dataCenter.contentsInfo = @{@"title":@"모바일프로그래밍",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/mobile/"};
+            dataCenter.contentsInfo = @{@"title":@"모바일프로그래밍",@"apiURL":@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/mobile/"};
             break;
             //designBtn
         case 2:
             
-            dataCenter.contentsInfo = @{@"title":@"디자인",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/design/"};
+            dataCenter.contentsInfo = @{@"title":@"디자인",@"apiURL":@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/design/"};
             break;
             //bigDBtn
         case 3:
             
-            dataCenter.contentsInfo = @{@"title":@"빅 데이터",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/bigdata/"};
+            dataCenter.contentsInfo = @{@"title":@"빅 데이터",@"apiURL":@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/bigdata/"};
             break;
             //ectBtn
         case 4:
             
-            dataCenter.contentsInfo = @{@"title":@"ETC",@"apiURL":@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/etc/"};
+            dataCenter.contentsInfo = @{@"title":@"ETC",@"apiURL":@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/etc/"};
             break;
         default:
             break;
@@ -168,7 +168,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSString *destinationURLString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/list/";
+    NSString *destinationURLString = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/users/list/";
     
     NSURL *url = [NSURL URLWithString:destinationURLString];
     
@@ -221,7 +221,7 @@
     [bodyParameters setObject:self.userID forKey:@"username"];
     [bodyParameters setObject:self.userID forKey:@"password"];
     
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/users/register/"
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/users/register/"
                                                                                              parameters:bodyParameters
                                                                               constructingBodyWithBlock:nil error:nil];
     

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString const *WEB_BOARD_API = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/web/";
-static NSString const *MOBILE_BOARD_API = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/mobile/";
-static NSString const *BIGDATA_BOARD_API = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/bigdata/";
-static NSString const *DESIGN_BOARD_API = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/design/";
-static NSString const *ETC_BOARD_API = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/etc/";
+static NSString const *WEB_BOARD_API = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/web/";
+static NSString const *MOBILE_BOARD_API = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/mobile/";
+static NSString const *BIGDATA_BOARD_API = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/bigdata/";
+static NSString const *DESIGN_BOARD_API = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/design/";
+static NSString const *ETC_BOARD_API = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/etc/";
 
 typedef void(^CompletionBlock)(BOOL isSucess, id result);
 

@@ -81,7 +81,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/"];
+    NSString *destinationURLString = [NSString stringWithFormat:@"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/comments/"];
     NSURL *url = [NSURL URLWithString:destinationURLString];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -140,7 +140,7 @@
     [bodyParameters setObject:[dataCenter.userInfos objectForKey:@"nickname"] forKey:@"name"];
     [bodyParameters setObject:self.commentTF.text forKey:@"content"];
     [bodyParameters setObject:[self.contentsInfos objectForKey:@"id"] forKey:@"board_id"];
-    NSString *urlString = @"http://ec2-52-78-247-21.ap-northeast-2.compute.amazonaws.com/board/comments/";
+    NSString *urlString = @"http://ec2-13-124-114-82.ap-northeast-2.compute.amazonaws.com/board/comments/";
     NSString *authURL = [NSString stringWithFormat:@"%@ %@",@"jwt",dataCenter.serverToken];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
