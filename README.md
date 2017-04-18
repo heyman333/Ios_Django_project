@@ -9,7 +9,7 @@ iOS공부와 Django공부를 막 시작하고나서 연습삼아 만들어본 �
 ---
 
 - 서버 :
-  - 개발자 : 김민구 _(https://github.com/MinGu-Kim)_
+  - 개발자 : 김민구 _(https://github.com/MinGoo-Kim)_
    - 활용기술
       - Python
       - [Django REST Framework](http://www.django-rest-framework.org/)
