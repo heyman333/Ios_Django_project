@@ -16,6 +16,7 @@ iOS공부와 Django공부를 막 시작하고나서 연습삼아 만들어본 �
       - [JWT](http://getblimp.github.io/django-rest-framework-jwt/)
       - AWS EC2
       - MySQL
+      - [Apache and mod_wsgi](https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/modwsgi/)
 
 - iOS :
   - 개발자 : 한영수 _(https://github.com/heyman333)_
