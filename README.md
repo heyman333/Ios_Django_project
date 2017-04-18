@@ -14,7 +14,7 @@ iOS공부와 Django공부를 막 시작하고나서 연습삼아 만들어본 �
       - Python
       - [Django REST Framework](http://www.django-rest-framework.org/)
       - [JWT](http://getblimp.github.io/django-rest-framework-jwt/)
-      - AWS EC2
+      - AWS EC2(Ubuntu)
       - MySQL
       - [Apache and mod_wsgi](https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/modwsgi/)
 
